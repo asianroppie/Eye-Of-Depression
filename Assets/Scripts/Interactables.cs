@@ -8,9 +8,11 @@ public class Interactables : MonoBehaviour
     public bool isInRange;
     public KeyCode interactKey;
     public UnityEvent interactAction;
+    public GameObject Ekey;
+    public GameObject Text;
     void Start()
     {
-        
+        Ekey.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,7 +31,10 @@ public class Interactables : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             isInRange = true;
-            Debug.Log("Masuk");
+            if(Text.activeInHierarchy == false)
+            {
+                Ekey.SetActive(true);
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -37,7 +42,7 @@ public class Interactables : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
-            Debug.Log("Keluar");
+            Ekey.SetActive(false);
         }
     }
 }

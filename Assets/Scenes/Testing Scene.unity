@@ -284,7 +284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655448394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -532,7 +532,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1591711564}
   - component: {fileID: 1591711563}
-  - component: {fileID: 1591711562}
   - component: {fileID: 1591711561}
   m_Layer: 0
   m_Name: Circle
@@ -558,22 +557,6 @@ MonoBehaviour:
   Text: {fileID: 1979584106}
   cooldownPeriod: 0.5
   timer: 0
---- !u!58 &1591711562
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591711560}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!212 &1591711563
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -895,6 +878,10 @@ PrefabInstance:
       propertyPath: Text
       value: 
       objectReference: {fileID: 1979584106}
+    - target: {fileID: 6509549336773808862, guid: c9b2bcd967143574192e0dc11e42b393, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 915697734}
     - target: {fileID: 6509549336773808862, guid: c9b2bcd967143574192e0dc11e42b393, type: 3}
       propertyPath: interactKey
       value: 101

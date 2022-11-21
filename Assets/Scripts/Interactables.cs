@@ -10,6 +10,7 @@ public class Interactables : MonoBehaviour
     public UnityEvent interactAction;
     public GameObject Ekey;
     public GameObject Text;
+    public Collider2D player;
     void Start()
     {
         Ekey.SetActive(false);
@@ -24,6 +25,10 @@ public class Interactables : MonoBehaviour
             {
                 interactAction.Invoke();
             }
+        }
+        if(isInRange == false)
+        {
+            Ekey.SetActive(false);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,7 +47,7 @@ public class Interactables : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
-            Ekey.SetActive(false);
+            //Ekey.SetActive(false);
         }
     }
 }

@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     Rigidbody2D body;
     float horizontal;
     public float runSpeed = 10.0f;
+    public int sympathyLevel = 0;
+    public int chapterUnlocked = 0;
+    public int SceneOnChapter = 0;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();

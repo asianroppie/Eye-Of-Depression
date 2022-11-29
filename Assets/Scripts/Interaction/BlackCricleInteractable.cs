@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CircleInteractable : MonoBehaviour
+public class BlackCricleInteractable : MonoBehaviour
 {
+    [SerializeField] private DialogueUI dialogueUI;
+    [SerializeField] private DialogueObject dialogueObject;
+    public DialogueUI DialogueUI => dialogueUI;
     public bool Interacted;
     public GameObject Ekey;
-    public GameObject Text;
     public float cooldownPeriod = 0.5f;
     public float timer;
     void Start()
     {
         Ekey.SetActive(false);
-        Text.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,7 +30,7 @@ public class CircleInteractable : MonoBehaviour
     }
     public void Response()
     {
-        if(Interacted == false)
+        if (Interacted == false)
         {
             if (Ekey.activeInHierarchy == true)
             {
@@ -37,24 +38,25 @@ public class CircleInteractable : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        Text.SetActive(true);
+                        //Text.SetActive(true);
+                        dialogueUI.ShowDialogue(dialogueObject);
                         Ekey.SetActive(false);
-                        Interacted = true;
                     }
                 }
             }
-            if (Text.activeInHierarchy == true)
+            /*if (Text.activeInHierarchy == true)
             {
                 StartCoroutine(Wait());
-            }
+            }*/
         }
+        Interacted = true;
     }
-    IEnumerator Wait()
+    /*IEnumerator Wait()
     {
         yield return new WaitForSeconds(1f);
-        Text.SetActive(false);
+        //Text.SetActive(false);
         Ekey.SetActive(true);
         Interacted = false;
         timer = cooldownPeriod;
-    }
+    }*/
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private DialogueUI dialogueUI;
+    public DialogueUI DialogueUI => dialogueUI;
     Rigidbody2D body;
     float horizontal;
     public float runSpeed = 10.0f;
@@ -15,10 +17,10 @@ public class Player : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
     }
 
-
     void Update()
     {
+        if (dialogueUI.IsOpen) return;
         horizontal = Input.GetAxisRaw("Horizontal");
         body.velocity = new Vector2(horizontal * runSpeed, 0);
-    }
+    }   
 }

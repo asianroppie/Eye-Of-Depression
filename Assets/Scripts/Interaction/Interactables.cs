@@ -9,7 +9,6 @@ public class Interactables : MonoBehaviour
     public KeyCode interactKey;
     public UnityEvent interactAction;
     public GameObject Ekey;
-    public GameObject Text;
     public Collider2D player;
     void Start()
     {
@@ -36,10 +35,7 @@ public class Interactables : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             isInRange = true;
-            if(Text.activeInHierarchy == false)
-            {
-                Ekey.SetActive(true);
-            }
+            Ekey.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

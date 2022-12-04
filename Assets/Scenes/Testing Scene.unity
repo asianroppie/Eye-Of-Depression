@@ -1464,7 +1464,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1201686917}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81652162edcee174883a2c9d0972eb61, type: 3}
+  m_Script: {fileID: 11500000, guid: d01a15ff441ec884d84734226dedd10e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 198425887}
@@ -1595,7 +1595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1591711564}
   - component: {fileID: 1591711563}
-  - component: {fileID: 1591711561}
+  - component: {fileID: 1591711565}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -1603,23 +1603,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1591711561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591711560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 034a141e657900c43a7dae69bffbf0c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Interacted: 0
-  Ekey: {fileID: 165355989}
-  Text: {fileID: 1979584106}
-  cooldownPeriod: 0.5
-  timer: 0
 --- !u!212 &1591711563
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1690,6 +1673,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1591711565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591711560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2361e9fc902f1e94eb1a2070f2893398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interacted: 0
+  Ekey: {fileID: 165355989}
+  Text: {fileID: 1979584106}
+  cooldownPeriod: 0.5
+  timer: 0
 --- !u!1 &1979584106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,7 +1966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6509549336773808862, guid: c9b2bcd967143574192e0dc11e42b393, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BlackCricleInteractable, Assembly-CSharp
+      value: Dialogue, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6509549336773808862, guid: c9b2bcd967143574192e0dc11e42b393, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2069,7 +2069,7 @@ PrefabInstance:
     - target: {fileID: 6509549336773808862, guid: c9b2bcd967143574192e0dc11e42b393, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1591711561}
+      objectReference: {fileID: 1591711565}
     - target: {fileID: 6509549336773808862, guid: c9b2bcd967143574192e0dc11e42b393, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -2080,7 +2080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6509549336773808862, guid: c9b2bcd967143574192e0dc11e42b393, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CircleInteractable, Assembly-CSharp
+      value: Monologue, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6509549336773808862, guid: c9b2bcd967143574192e0dc11e42b393, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

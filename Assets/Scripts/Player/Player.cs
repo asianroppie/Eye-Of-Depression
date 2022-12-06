@@ -19,7 +19,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (dialogueUI.IsOpen) return;
+        if (dialogueUI.IsOpen)
+        {
+            body.velocity = new Vector2(0, 0);
+            return;
+        }
         horizontal = Input.GetAxisRaw("Horizontal");
         body.velocity = new Vector2(horizontal * runSpeed, 0);
     }   

@@ -29,21 +29,18 @@ public class Monologue : MonoBehaviour
     }
     public void Response()
     {
-        if (Interacted == false)
+        if (!Interacted)
         {
-            if (Ekey.activeInHierarchy == true)
+            if (Ekey.activeInHierarchy)
             {
                 if (timer == 0)
                 {
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        Text.SetActive(true);
-                        Ekey.SetActive(false);
-                        Interacted = true;
-                    }
+                    Text.SetActive(true);
+                    Ekey.SetActive(false);
+                    Interacted = true;
                 }
             }
-            if (Text.activeInHierarchy == true)
+            if (Text.activeInHierarchy)
             {
                 StartCoroutine(Wait());
             }

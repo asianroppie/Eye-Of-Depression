@@ -30,18 +30,15 @@ public class Dialogue : MonoBehaviour
     }
     public void Response()
     {
-        if (Interacted == false)
+        if (!Interacted)
         {
-            if (Ekey.activeInHierarchy == true)
+            if (Ekey.activeInHierarchy)
             {
                 if (timer == 0)
                 {
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        //Text.SetActive(true);
-                        dialogueUI.ShowDialogue(dialogueObject);
-                        Ekey.SetActive(false);
-                    }
+                    //Text.SetActive(true);
+                    dialogueUI.ShowDialogue(dialogueObject);
+                    Ekey.SetActive(false);
                 }
             }
             /*if (Text.activeInHierarchy == true)
@@ -50,6 +47,7 @@ public class Dialogue : MonoBehaviour
             }*/
         }
         Interacted = true;
+        Destroy(Ekey);
     }
     /*IEnumerator Wait()
     {

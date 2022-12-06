@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Interactables : MonoBehaviour
 {
+    public Monologue monologue;
     public bool isInRange;
     public KeyCode interactKey;
     public UnityEvent interactAction;
@@ -25,7 +26,11 @@ public class Interactables : MonoBehaviour
                 interactAction.Invoke();
             }
         }
-        if(isInRange == false)
+        if (!isInRange)
+        {
+            Ekey.SetActive(false);
+        }
+        if (monologue.Interacted)
         {
             Ekey.SetActive(false);
         }
@@ -43,7 +48,6 @@ public class Interactables : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
-            //Ekey.SetActive(false);
         }
     }
 }

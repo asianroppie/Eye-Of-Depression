@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class DoorInteract : MonoBehaviour
 {
+    public Monologue monologue;
     public bool isInRange;
     public KeyCode interactKey;
     public UnityEvent interactAction;
@@ -20,13 +21,20 @@ public class DoorInteract : MonoBehaviour
     {
         if (isInRange)
         {
-            if (Input.GetKeyDown(interactKey))
+            if(Ekey.activeInHierarchy)
             {
-                interactAction.Invoke();
-                FadeEvent.current.DoorTrigger();
+                if (Input.GetKeyDown(interactKey))
+                {
+                    interactAction.Invoke();
+                    FadeEvent.current.DoorTrigger();
+                }
             }
         }
         if (!isInRange)
+        {
+            Ekey.SetActive(false);
+        }
+        if (monologue.Interacted)
         {
             Ekey.SetActive(false);
         }

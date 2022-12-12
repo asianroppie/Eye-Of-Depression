@@ -40,7 +40,7 @@ public class Fade : MonoBehaviour
         {
             background2.SetActive(true);
         }
-        player.transform.position = new Vector2(-5, player.transform.position.y); //set character to spawnPoint
+        player.transform.position = new Vector2(-6, player.transform.position.y); //set character to spawnPoint
         animator.SetTrigger("FadeIn");
     }
 }

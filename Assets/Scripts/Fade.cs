@@ -7,10 +7,17 @@ public class Fade : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private GameObject background1;
     [SerializeField] private GameObject background2;
+    [SerializeField] private GameObject autoMonologue;
+    [SerializeField] private FadeInteract fadeInteract;
+    public FadeInteract FadeInteract => fadeInteract;
     public Animator animator;
     void Start()
     {
-        
+        autoMonologue.SetActive(true);
+        if (autoMonologue.activeInHierarchy)
+        {
+            StartCoroutine(Wait());
+        }
     }
 
     // Update is called once per frame
@@ -21,10 +28,13 @@ public class Fade : MonoBehaviour
     public void FadeToLevel()
     {
         animator.SetTrigger("FadeOut");
+        fadeInteract.showered = false;
     }
     public void OnFadeComplete()
     {
-        if(background1.activeInHierarchy == true)
+        background1.SetActive(false);
+        background2.SetActive(true);
+        /*if (background1.activeInHierarchy == true)
         {
             background1.SetActive(false);
         }
@@ -39,8 +49,16 @@ public class Fade : MonoBehaviour
         else
         {
             background2.SetActive(true);
+        }*/
+        if(!fadeInteract.showered)
+        {
+            player.transform.position = new Vector2(-6, player.transform.position.y);
         }
-        player.transform.position = new Vector2(-6, player.transform.position.y); //set character to spawnPoint
         animator.SetTrigger("FadeIn");
+    }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(4f);
+        autoMonologue.SetActive(false);
     }
 }

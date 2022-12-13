@@ -30,6 +30,10 @@ public class Fade : MonoBehaviour
         animator.SetTrigger("FadeOut");
         fadeInteract.showered = false;
     }
+    public void FadeToScene()
+    {
+
+    }
     public void OnFadeComplete()
     {
         background1.SetActive(false);

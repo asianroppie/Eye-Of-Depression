@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class DoorInteract : MonoBehaviour
 {
-    public Monologue monologue;
+    public Door door;
     public bool isInRange;
     public KeyCode interactKey;
     public UnityEvent interactAction;
@@ -34,7 +34,7 @@ public class DoorInteract : MonoBehaviour
         {
             Ekey.SetActive(false);
         }
-        if (monologue.Interacted)
+        if (door.Interacted)
         {
             Ekey.SetActive(false);
         }

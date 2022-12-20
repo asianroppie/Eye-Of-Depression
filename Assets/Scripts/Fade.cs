@@ -8,8 +8,6 @@ public class Fade : MonoBehaviour
     [SerializeField] private GameObject background1;
     [SerializeField] private GameObject background2;
     [SerializeField] private GameObject autoMonologue;
-    [SerializeField] private FadeInteract fadeInteract;
-    public FadeInteract FadeInteract => fadeInteract;
     public Animator animator;
     void Start()
     {
@@ -28,7 +26,6 @@ public class Fade : MonoBehaviour
     public void FadeToLevel()
     {
         animator.SetTrigger("FadeOut");
-        fadeInteract.showered = false;
     }
     public void FadeToScene()
     {
@@ -54,14 +51,7 @@ public class Fade : MonoBehaviour
         {
             background2.SetActive(true);
         }*/
-        if(!fadeInteract.showered)
-        {
-            player.transform.position = new Vector2(-6, player.transform.position.y);
-        }
-        if (fadeInteract.showered)
-        {
-            //change character sprite
-        }
+        player.transform.position = new Vector2(-6, player.transform.position.y);
         animator.SetTrigger("FadeIn");
     }
     IEnumerator Wait()

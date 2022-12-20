@@ -17,7 +17,7 @@ public class InteractObjects : MonoBehaviour
     void Start()
     {
         Ekey.SetActive(false);
-        //beforeText.SetActive(false);
+        beforeText.SetActive(false);
         //afterText.SetActive(false);
     }
 
@@ -87,6 +87,24 @@ public class InteractObjects : MonoBehaviour
             }
         }
     }
+    public void ResponsePop()
+    {
+        if (!Interacted)
+        {
+            if (Ekey.activeInHierarchy)
+            {
+                if (timer == 0)
+                {
+                    Ekey.SetActive(false);
+                    beforeText.SetActive(true);
+                }
+            }
+            if (beforeText.activeInHierarchy)
+            {
+                StartCoroutine(WaitPop());
+            }
+        }
+    }
     IEnumerator WaitMirror()
     {
         yield return new WaitForSeconds(2f);
@@ -102,6 +120,13 @@ public class InteractObjects : MonoBehaviour
         beforeText.SetActive(false);
         Ekey.SetActive(true);
         Interacted = false;
+        timer = cooldownPeriod;
+    }
+    IEnumerator WaitPop()
+    {
+        yield return new WaitForSeconds(2f);
+        beforeText.SetActive(false);
+        Destroy(this.gameObject);
         timer = cooldownPeriod;
     }
 }

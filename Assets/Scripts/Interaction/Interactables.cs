@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Interactables : MonoBehaviour
 {
-    public Monologue monologue;
+    //public Monologue monologue;
     public bool isInRange;
     public KeyCode interactKey;
     public UnityEvent interactAction;
@@ -30,12 +30,12 @@ public class Interactables : MonoBehaviour
         {
             Ekey.SetActive(false);
         }
-        if (monologue.Interacted)
+        /*if (monologue.Interacted)
         {
             Ekey.SetActive(false);
-        }
+        }*/
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {

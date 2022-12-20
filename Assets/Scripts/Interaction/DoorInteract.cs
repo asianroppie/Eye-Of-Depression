@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class DoorInteract : MonoBehaviour
 {
-    public Door door;
+    public InteractObjects door;
     public bool isInRange;
     public KeyCode interactKey;
     public UnityEvent interactAction;
@@ -26,7 +26,7 @@ public class DoorInteract : MonoBehaviour
                 if (Input.GetKeyDown(interactKey))
                 {
                     interactAction.Invoke();
-                    FadeEvent.current.DoorTrigger();
+                    //FadeEvent.current.DoorTrigger();
                 }
             }
         }
@@ -45,7 +45,7 @@ public class DoorInteract : MonoBehaviour
         {
             isInRange = true;
             Ekey.SetActive(true);
-            FadeEvent.current.DoorTrigger();
+            //FadeEvent.current.DoorTrigger();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -53,7 +53,7 @@ public class DoorInteract : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
-            FadeEvent.current.DoorTriggerExit();
+            //FadeEvent.current.DoorTriggerExit();
         }
     }
 }

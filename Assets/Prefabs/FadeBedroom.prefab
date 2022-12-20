@@ -111,9 +111,9 @@ GameObject:
   m_Component:
   - component: {fileID: 523082678675490485}
   - component: {fileID: 523082678675490484}
-  - component: {fileID: 523082678675490486}
+  - component: {fileID: 7950418714088522110}
   m_Layer: 0
-  m_Name: Fade
+  m_Name: FadeBedroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &523082678675490486
+--- !u!114 &7950418714088522110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,10 +164,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 523082678675490483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f5aa2273b896414da4161523b45844b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3045c78952017f74d8b8a3307d9fd094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 523082678675490484}
+  player: {fileID: 0}
+  background1: {fileID: 0}
+  background2: {fileID: 0}
+  autoMonologue: {fileID: 0}
+  fadeInteract: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &523082678853344390
 GameObject:
   m_ObjectHideFlags: 0

@@ -58,6 +58,10 @@ public class Fade : MonoBehaviour
         {
             player.transform.position = new Vector2(-6, player.transform.position.y);
         }
+        if (fadeInteract.showered)
+        {
+            //change character sprite
+        }
         animator.SetTrigger("FadeIn");
     }
     IEnumerator Wait()

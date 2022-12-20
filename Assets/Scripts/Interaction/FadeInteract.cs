@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FadeInteract : MonoBehaviour
 {
-    [SerializeField] private Fade fade;
+    [SerializeField] private FadeBedroom fadeBedroom;
     public bool showered;
     public GameObject Ekey;
-    public Fade Fade => fade;
+    public FadeBedroom FadeBedroom => fadeBedroom;
     void Start()
     {
         Ekey.SetActive(false);
@@ -24,7 +24,7 @@ public class FadeInteract : MonoBehaviour
             if (Ekey.activeInHierarchy)
             {
                 Ekey.SetActive(false);
-                fade.FadeToLevel();
+                fadeBedroom.FadeToLevel();
             }
             showered = true;
             Destroy(this.gameObject);

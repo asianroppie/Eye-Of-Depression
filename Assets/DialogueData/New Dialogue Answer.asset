@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8460456ec1404e41bfe681a57a97bb0, type: 3}
-  m_Name: New Dialogue Iter
+  m_Script: {fileID: 11500000, guid: ad31046eff686af428743d3e680b50b9, type: 3}
+  m_Name: New Dialogue Answer
   m_EditorClassIdentifier: 
+  answerList: []

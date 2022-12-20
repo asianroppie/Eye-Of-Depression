@@ -22,6 +22,8 @@ public class DialogueUI : MonoBehaviour
     }
     public void ShowDialogue(DialogueObject dialogueObject)
     {
+        string dialogue = dialogueObject.Dialogue[dialogueObject.Dialogue.Length - 1];
+        DialogueRecorder.instance.setDialogue(dialogue);
         IsOpen = true;
         dialogueBox.SetActive(true);
         StartCoroutine(StepThroughDialogue(dialogueObject));

@@ -41,7 +41,7 @@ public class Dialogue : MonoBehaviour
                 {
                     //Text.SetActive(true);
                     dialogueUI.ShowDialogue(dialogueObject);
-                    Array.ForEach(dialogueObject.Dialogue, Debug.Log);
+                    //Array.ForEach(dialogueObject.Dialogue, Debug.Log);
                     Ekey.SetActive(false);
                 }
             }

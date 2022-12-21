@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FadeBedroom : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class FadeBedroom : MonoBehaviour
     [SerializeField] private FadeInteract fadeInteract;
     public FadeInteract FadeInteract => fadeInteract;
     public Animator animator;
+    
     void Start()
     {
         autoMonologue.SetActive(true);
@@ -27,33 +29,13 @@ public class FadeBedroom : MonoBehaviour
     }
     public void FadeToLevel()
     {
-        animator.SetTrigger("FadeOut");
+        animator.SetTrigger("FadeOutBedroom");
         fadeInteract.showered = false;
-    }
-    public void FadeToScene()
-    {
-
     }
     public void OnFadeComplete()
     {
         background1.SetActive(false);
         background2.SetActive(true);
-        /*if (background1.activeInHierarchy == true)
-        {
-            background1.SetActive(false);
-        }
-        else
-        {
-            background1.SetActive(true);
-        }
-        if (background2.activeInHierarchy == true)
-        {
-            background2.SetActive(false);
-        }
-        else
-        {
-            background2.SetActive(true);
-        }*/
         if (!fadeInteract.showered)
         {
             player.transform.position = new Vector2(-6, player.transform.position.y);
@@ -62,7 +44,7 @@ public class FadeBedroom : MonoBehaviour
         {
             //change character sprite
         }
-        animator.SetTrigger("FadeIn");
+        animator.SetTrigger("FadeInBedroom");
     }
     IEnumerator Wait()
     {

@@ -12,6 +12,19 @@ public class Player : MonoBehaviour
     public int sympathyLevel = 0;
     public int chapterUnlocked = 0;
     public int SceneOnChapter = 0;
+    public static Player instance;
+    private void Awake()
+    {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
         body = GetComponent<Rigidbody2D>();

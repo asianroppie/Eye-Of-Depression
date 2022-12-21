@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay/Day 1/Normie/Bedroom Scene.unity
     guid: 3695e1e59a147cd49860894a643b7449
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Day 1/Normie/Office Scene.unity
+    guid: ee602aae9d29ebb4d82d9b7d20d363b2
   m_configObjects: {}

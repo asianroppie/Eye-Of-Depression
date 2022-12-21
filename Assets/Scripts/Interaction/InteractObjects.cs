@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteractObjects : MonoBehaviour
 {
     [SerializeField] private FadeInteract fadeInteract;
-    [SerializeField] private FadeBedroom fadeBedroom;
+    [SerializeField] private Fade fade;
     public bool Interacted;
     public GameObject Ekey;
     public GameObject beforeText;
@@ -13,7 +13,7 @@ public class InteractObjects : MonoBehaviour
     public float cooldownPeriod = 0.5f;
     public float timer;
     public FadeInteract FadeInteract => fadeInteract;
-    public FadeBedroom FadeBedroom => fadeBedroom;
+    public Fade Fade => fade;
     void Start()
     {
         Ekey.SetActive(false);
@@ -51,7 +51,7 @@ public class InteractObjects : MonoBehaviour
                     }
                     Ekey.SetActive(false);
                     Interacted = true;
-                    Debug.Log(fadeInteract.showered);
+                    //Debug.Log(fadeInteract.showered);
                 }
             }
             if (beforeText.activeInHierarchy || afterText.activeInHierarchy)
@@ -77,7 +77,7 @@ public class InteractObjects : MonoBehaviour
                     if (fadeInteract.showered)
                     {
                         Ekey.SetActive(false);
-                        fadeBedroom.FadeToScene();
+                        fade.FadeToScene();
                     }
                 }
             }

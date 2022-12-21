@@ -1,14 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Fade : MonoBehaviour
 {
     [SerializeField] private Player player;
-    [SerializeField] private GameObject background1;
-    [SerializeField] private GameObject background2;
     [SerializeField] private GameObject autoMonologue;
     public Animator animator;
+    public static Fade instance;
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
         autoMonologue.SetActive(true);
@@ -29,12 +41,10 @@ public class Fade : MonoBehaviour
     }
     public void FadeToScene()
     {
-
+        animator.SetTrigger("FadeOut");
     }
     public void OnFadeComplete()
     {
-        background1.SetActive(false);
-        background2.SetActive(true);
         /*if (background1.activeInHierarchy == true)
         {
             background1.SetActive(false);
@@ -53,6 +63,7 @@ public class Fade : MonoBehaviour
         }*/
         player.transform.position = new Vector2(-6, player.transform.position.y);
         animator.SetTrigger("FadeIn");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     IEnumerator Wait()
     {

@@ -30,7 +30,6 @@ public class Player : MonoBehaviour
                 m_proximityGO.First().SendMessage("Interact");
             }
         }
-       
     }
 
 
@@ -52,11 +51,11 @@ public class Player : MonoBehaviour
     {
         if (m_proximityGO.Count > 0)
         {
-            m_proximityGO.Sort((GameObject a, GameObject b) => { // Sort by distance
+            m_proximityGO.Sort((GameObject a, GameObject b) => { // Sort by closest
                 a.SendMessage("ActivateIcon", false);
                 b.SendMessage("ActivateIcon", false);
-                var distance_to_a = a.transform.position.x - transform.position.x;
-                var distance_to_b = b.transform.position.x - transform.position.x;
+                var distance_to_a = Mathf.Abs(a.transform.position.x - transform.position.x);
+                var distance_to_b = Mathf.Abs(b.transform.position.x - transform.position.x);
 
                 if (distance_to_a > distance_to_b) return 1;
                 if (distance_to_b > distance_to_a) return -1;

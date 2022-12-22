@@ -23,7 +23,7 @@ MonoBehaviour:
     - option: What?
       next: {fileID: 0}
     - option: Hello?
-      next: {fileID: 0}
+      next: {fileID: 11400000, guid: e58448cb037d54a4ba6feffe58a10097, type: 2}
     ev:
       m_PersistentCalls:
         m_Calls: []

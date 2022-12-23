@@ -9,7 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad31046eff686af428743d3e680b50b9, type: 3}
-  m_Name: New Dialogue Answer
+  m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
+  m_Name: Test 2
   m_EditorClassIdentifier: 
-  answerList: []
+  data:
+  - text: test2222
+    options: []
+    ev:
+      m_PersistentCalls:
+        m_Calls: []

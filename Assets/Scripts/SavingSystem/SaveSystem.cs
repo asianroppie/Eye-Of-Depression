@@ -11,13 +11,13 @@ public class SaveSystem : MonoBehaviour
         string path = Application.persistentDataPath + "/player.fun";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        PlayerData data = new PlayerData(player);
+        //PlayerData data = new PlayerData(player);
 
-        formatter.Serialize(stream, data);
+        //formatter.Serialize(stream, data);
         stream.Close();
     }
 
-    public static PlayerData LoadData()
+    /*public static PlayerData LoadData()
     {
         string path = Application.persistentDataPath + "/player.fun";
         if (File.Exists(path))
@@ -35,5 +35,5 @@ public class SaveSystem : MonoBehaviour
             Debug.Log("Save File Not Found In" + path);
             return null;
         }
-    }
+    }*/
 }

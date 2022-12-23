@@ -1,43 +1,75 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private DialogueUI dialogueUI;
-    public DialogueUI DialogueUI => dialogueUI;
-    Rigidbody2D body;
-    float horizontal;
+    private Rigidbody2D m_body;
+    private List<GameObject> m_proximityGO;
+
+    public KeyCode interactKey;
     public float runSpeed = 10.0f;
-    public int sympathyLevel = 0;
-    public int chapterUnlocked = 0;
-    public int SceneOnChapter = 0;
-    public static Player instance;
-    private void Awake()
-    {
-        if(instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-        }
-        DontDestroyOnLoad(gameObject);
-    }
+
+    
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();
+        m_body = GetComponent<Rigidbody2D>();
+        m_proximityGO = new List<GameObject>();
     }
 
-    void Update()
+
+    private void Update()
     {
-        if (dialogueUI.IsOpen)
+        if (!Singleton.runtime.Freezed)
         {
-            body.velocity = new Vector2(0, 0);
-            return;
+            // All input code shall be on this block....
+
+            if (Input.GetKeyDown(interactKey))
+            {
+                m_proximityGO.First().SendMessage("Interact");
+            }
         }
-        horizontal = Input.GetAxisRaw("Horizontal");
-        body.velocity = new Vector2(horizontal * runSpeed, 0);
-    }   
+    }
+
+
+    private void FixedUpdate()
+    {
+        var dir = Input.GetAxisRaw("Horizontal");
+        m_body.velocity = new Vector2(dir * runSpeed, 0);
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Interactable"))
+            m_proximityGO.Add(collision.gameObject);
+    }
+
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (m_proximityGO.Count > 0)
+        {
+            m_proximityGO.Sort((GameObject a, GameObject b) => { // Sort by closest
+                a.SendMessage("ActivateIcon", false);
+                b.SendMessage("ActivateIcon", false);
+                var distance_to_a = Mathf.Abs(a.transform.position.x - transform.position.x);
+                var distance_to_b = Mathf.Abs(b.transform.position.x - transform.position.x);
+
+                if (distance_to_a > distance_to_b) return 1;
+                if (distance_to_b > distance_to_a) return -1;
+                return 0; // equal distance
+            });
+
+            m_proximityGO.First().SendMessage("ActivateIcon", true && !Singleton.runtime.onMonologue);
+        }
+    }
+
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Interactable"))
+            m_proximityGO.Remove(collision.gameObject);
+    }
 }

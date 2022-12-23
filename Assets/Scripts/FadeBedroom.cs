@@ -15,6 +15,8 @@ public class FadeBedroom : MonoBehaviour
     
     void Start()
     {
+        //Singleton.events.animfadeout.addlistener(fadetolevel);
+
         autoMonologue.SetActive(true);
         if (autoMonologue.activeInHierarchy)
         {

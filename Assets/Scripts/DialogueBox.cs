@@ -53,12 +53,12 @@ public class DialogueBox : MonoBehaviour
             yield return GetComponent<TypewriterEffect>().Run(data.text, m_textLabel);
 
             // Has options
-            if (data.options.Length > 1)
+            if (data.options.Length > 0)
             {
                 m_optionBox.gameObject.SetActive(true);
                 foreach (var option in data.options)
                     AddOptionBtn(option);
-            } 
+            }
             
             yield return new WaitUntil(() => Input.GetKeyDown(nextKey) || m_optionBox.gameObject.activeSelf);
         }

@@ -63,7 +63,7 @@ public class Fade : MonoBehaviour
         }*/
         player.transform.position = new Vector2(-6, player.transform.position.y);
         animator.SetTrigger("FadeIn");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     IEnumerator Wait()
     {

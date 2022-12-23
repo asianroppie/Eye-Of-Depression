@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
   - text: First line
-    options: []
+    options:
+    - option: hemlo
+      next: {fileID: 11400000, guid: 25c3c5527e9e69b4384a6e5b37d849f3, type: 2}
     ev:
       m_PersistentCalls:
         m_Calls: []

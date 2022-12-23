@@ -5,7 +5,6 @@ using UnityEngine;
 public class InteractiveMonologue : Interactive
 {
     [SerializeField] private GameObject text;
-    public bool waiting;
     protected override void Start()
     {
         base.Start();

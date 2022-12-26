@@ -6,6 +6,7 @@ public class RuntimeManager : MonoBehaviour
 {
     private bool m_freezed = false;
     public bool onMonologue = false;
+    public bool showered = false;
 
     private void Start()
     {

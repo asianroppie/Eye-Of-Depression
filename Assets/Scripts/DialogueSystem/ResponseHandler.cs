@@ -38,8 +38,6 @@ public class ResponseHandler : MonoBehaviour
             Destroy(button);
         }
         tempResponseButtons.Clear();
-        DialogueRecorder.instance.setResponse(response.ResponseText);
-        DialogueRecorder.instance.commit();
         dialogueUI.ShowDialogue(response.DialogueObject);
     }
 }

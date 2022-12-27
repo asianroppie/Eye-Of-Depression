@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Fade : MonoBehaviour
 {
-    [SerializeField] private Player player;
-    [SerializeField] private GameObject autoMonologue;
     public Animator animator;
     public static Fade instance;
     private void Awake()
@@ -23,21 +21,7 @@ public class Fade : MonoBehaviour
     }
     void Start()
     {
-        autoMonologue.SetActive(true);
-        if (autoMonologue.activeInHierarchy)
-        {
-            StartCoroutine(Wait());
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void FadeToLevel()
-    {
-        animator.SetTrigger("FadeOut");
+        Singleton.events.fade_to_scene.AddListener(FadeToScene);
     }
     public void FadeToScene()
     {
@@ -45,29 +29,9 @@ public class Fade : MonoBehaviour
     }
     public void OnFadeComplete()
     {
-        /*if (background1.activeInHierarchy == true)
-        {
-            background1.SetActive(false);
-        }
-        else
-        {
-            background1.SetActive(true);
-        }
-        if (background2.activeInHierarchy == true)
-        {
-            background2.SetActive(false);
-        }
-        else
-        {
-            background2.SetActive(true);
-        }*/
-        player.transform.position = new Vector2(-6, player.transform.position.y);
+        Singleton.events.fade_called.Invoke();
+        Singleton.runtime.showered = false;
         animator.SetTrigger("FadeIn");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(4f);
-        autoMonologue.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

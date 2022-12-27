@@ -77,7 +77,7 @@ public class InteractObjects : MonoBehaviour
                     if (fadeInteract.showered)
                     {
                         Ekey.SetActive(false);
-                        fade.FadeToScene();
+                        //fade.FadeToScene();
                     }
                 }
             }

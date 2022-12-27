@@ -7,15 +7,32 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D m_body;
     private List<GameObject> m_proximityGO;
+    public Animator animator;
+    public static Player instance;
 
     public KeyCode interactKey;
     public float runSpeed = 10.0f;
+    private bool m_FacingRight = true;
 
-    
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         m_body = GetComponent<Rigidbody2D>();
         m_proximityGO = new List<GameObject>();
+        Singleton.events.fade_called.AddListener(MovePosition);
+        Singleton.events.change_sprite.AddListener(ChangeSprite);
     }
 
 
@@ -27,18 +44,37 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyDown(interactKey))
             {
-                m_proximityGO.First().SendMessage("Interact");
+                if (m_proximityGO.First() == null)
+                {
+                    m_proximityGO.RemoveAt(0);
+                }
+                if (m_proximityGO.Count > 0)
+                {
+                    m_proximityGO.First().SendMessage("Interact");
+                }
             }
         }
     }
-
 
     private void FixedUpdate()
     {
         var dir = Input.GetAxisRaw("Horizontal");
         m_body.velocity = new Vector2(dir * runSpeed, 0);
+        animator.SetFloat("Speed", Mathf.Abs(dir));
+        if (dir > 0 && !m_FacingRight)
+        {
+            Flip();
+        }
+        else if (dir < 0 && m_FacingRight)
+        {
+            Flip();
+        }
     }
 
+    public void MovePosition()
+    {
+        this.gameObject.transform.position = new Vector2(-6, this.gameObject.transform.position.y);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -46,6 +82,10 @@ public class Player : MonoBehaviour
             m_proximityGO.Add(collision.gameObject);
     }
 
+    public void ChangeSprite()
+    {
+        animator.SetLayerWeight(1, 1);
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -71,5 +111,13 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Interactable"))
             m_proximityGO.Remove(collision.gameObject);
+    }
+    private void Flip()
+    {
+        m_FacingRight = !m_FacingRight;
+
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 }

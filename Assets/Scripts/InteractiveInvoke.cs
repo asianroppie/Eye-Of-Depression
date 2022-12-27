@@ -11,7 +11,10 @@ public class InteractiveInvoke : Interactive
     public override void Interact()
     {
         //Singleton.events.monologue_start_request.Invoke(monologue);
-        interactAction.Invoke();
+        if (!Singleton.runtime.onMonologue)
+        {
+            interactAction.Invoke();
+        }
     }
     public void ResponseMirror()
     {
@@ -34,12 +37,22 @@ public class InteractiveInvoke : Interactive
         }
         if (Singleton.runtime.showered)
         {
-            //fade.FadeToScene();
+            Singleton.events.fade_to_scene.Invoke();
         }
     }
     public void ResponsePop()
     {
         StartCoroutine(startPop());
+    }
+    public void ResponseFade()
+    {
+        Singleton.events.fade_to_level.Invoke();
+    }
+    public void ResponseShower()
+    {
+        Singleton.runtime.showered = true;
+        Singleton.events.fade_to_level.Invoke();
+        Destroy(this.gameObject);
     }
     IEnumerator startBeforeText()
     {
@@ -52,7 +65,7 @@ public class InteractiveInvoke : Interactive
         beforeText.SetActive(true);
         yield return new WaitForSeconds(2.0f);
         beforeText.SetActive(false);
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
         Singleton.runtime.onMonologue = false;
     }
     IEnumerator startAfterText()
@@ -66,7 +79,7 @@ public class InteractiveInvoke : Interactive
         afterText.SetActive(true);
         yield return new WaitForSeconds(2.0f);
         afterText.SetActive(false);
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
         Singleton.runtime.onMonologue = false;
     }
     IEnumerator startPop()

@@ -48,7 +48,7 @@ public class Door : MonoBehaviour
                     if(fadeInteract.showered)
                     {
                         Ekey.SetActive(false);
-                        fade.FadeToScene();
+                        //fade.FadeToScene();
                     }
                 }
             }

@@ -26,7 +26,7 @@ public class InteractiveMonologue : Interactive
         text.SetActive(true);
         yield return new WaitForSeconds(2.0f);
         text.SetActive(false);
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
         Singleton.runtime.onMonologue = false;
     }
 }

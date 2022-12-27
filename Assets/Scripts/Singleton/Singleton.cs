@@ -31,7 +31,10 @@ public class Singleton : MonoBehaviour
         events.dialogue_step = new UnityEvent<DialogueData>();
         events.dialogue_end = new UnityEvent();
         events.dialogue_option_select = new UnityEvent<DialogueOption>();
-        events.fade = new UnityEvent();
+        events.fade_to_level = new UnityEvent();
+        events.fade_to_scene = new UnityEvent();
+        events.fade_called = new UnityEvent();
+        events.change_sprite = new UnityEvent();
 
         DontDestroyOnLoad(gameObject);
     }
@@ -45,7 +48,10 @@ public struct GameEvents
     public UnityEvent<DialogueData> dialogue_step;
     public UnityEvent dialogue_end;
     public UnityEvent<DialogueOption> dialogue_option_select;
-    public UnityEvent fade;
+    public UnityEvent fade_to_level;
+    public UnityEvent fade_to_scene;
+    public UnityEvent fade_called;
+    public UnityEvent change_sprite;
 }
 
 

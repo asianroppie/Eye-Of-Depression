@@ -9,13 +9,11 @@ public class FadeBedroom : MonoBehaviour
     [SerializeField] private GameObject background1;
     [SerializeField] private GameObject background2;
     [SerializeField] private GameObject autoMonologue;
-    [SerializeField] private FadeInteract fadeInteract;
-    public FadeInteract FadeInteract => fadeInteract;
     public Animator animator;
     
     void Start()
     {
-        //Singleton.events.animfadeout.addlistener(fadetolevel);
+        Singleton.events.fade_to_level.AddListener(FadeToLevel);
 
         autoMonologue.SetActive(true);
         if (autoMonologue.activeInHierarchy)
@@ -23,28 +21,22 @@ public class FadeBedroom : MonoBehaviour
             StartCoroutine(Wait());
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void FadeToLevel()
     {
         animator.SetTrigger("FadeOutBedroom");
-        fadeInteract.showered = false;
     }
     public void OnFadeComplete()
     {
         background1.SetActive(false);
         background2.SetActive(true);
-        if (!fadeInteract.showered)
+        if (!Singleton.runtime.showered)
         {
-            player.transform.position = new Vector2(-6, player.transform.position.y);
+            Singleton.events.fade_called.Invoke();
         }
-        if (fadeInteract.showered)
+        if (Singleton.runtime.showered)
         {
-            //change character sprite
+            //change character sprite with singleton event with player as a listener
+            Singleton.events.change_sprite.Invoke();
         }
         animator.SetTrigger("FadeInBedroom");
     }

@@ -15,7 +15,6 @@ public class DialogueSO : ScriptableObject
 public struct DialogueData {
     [TextArea] public string text;
     public DialogueOption[] options;
-    public UnityEvent<object> ev;
 }
 
 [Serializable]

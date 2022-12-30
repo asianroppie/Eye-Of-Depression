@@ -54,6 +54,10 @@ public class InteractiveInvoke : Interactive
         Singleton.events.fade_to_level.Invoke();
         Destroy(this.gameObject);
     }
+    public void TestResponse()
+    {
+        Singleton.events.play_cutscene.Invoke();
+    }
     IEnumerator startBeforeText()
     {
         if (Singleton.runtime.onMonologue)

@@ -74,6 +74,8 @@ public class Player : MonoBehaviour
     public void MovePosition()
     {
         this.gameObject.transform.position = new Vector2(-6, this.gameObject.transform.position.y);
+        this.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        m_FacingRight = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -112,7 +114,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Interactable"))
             m_proximityGO.Remove(collision.gameObject);
     }
-    private void Flip()
+    public void Flip()
     {
         m_FacingRight = !m_FacingRight;
         Vector3 theScale = transform.localScale;

@@ -10,6 +10,7 @@ public class Director : MonoBehaviour
     void Start()
     {
         Singleton.events.play_cutscene.AddListener(Play);
+        StartCoroutine(Wait());
     }
 
     public void Play()
@@ -17,4 +18,9 @@ public class Director : MonoBehaviour
         director.Play();
     }
     //when cutscene stop, invoke event for dialogue
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Singleton.events.office_cutscene.Invoke();
+    }
 }

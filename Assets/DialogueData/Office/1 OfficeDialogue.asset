@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
-  m_Name: Test 1
+  m_Name: 1 OfficeDialogue
   m_EditorClassIdentifier: 
   data:
-  - text: First line
+  - text: "Co-worker:\nHey Normie, you\u2019re late today. Traffic jams?"
     options: []
-  - text: Second line
+  - text: "Normie:\nYeah, it\u2019s insane like usual.\r"
     options:
-    - option: Ye
-      next: {fileID: 11400000, guid: 25c3c5527e9e69b4384a6e5b37d849f3, type: 2}
+    - option: YE
+      next: {fileID: 11400000, guid: a5e31dd73db79244f99989e7128a9025, type: 2}

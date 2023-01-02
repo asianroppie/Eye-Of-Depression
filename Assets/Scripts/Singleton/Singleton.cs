@@ -36,6 +36,7 @@ public class Singleton : MonoBehaviour
         events.fade_called = new UnityEvent();
         events.change_sprite = new UnityEvent();
         events.play_cutscene = new UnityEvent();
+        events.office_cutscene = new UnityEvent();
 
         DontDestroyOnLoad(gameObject);
     }
@@ -54,6 +55,7 @@ public struct GameEvents
     public UnityEvent fade_called;
     public UnityEvent change_sprite;
     public UnityEvent play_cutscene;
+    public UnityEvent office_cutscene;
 }
 
 

@@ -11,6 +11,7 @@ public class InteractiveDialogue : Interactive
     {
         base.Start();
         //Singleton.events.dialogue_after_cutscene.AddListener(StartDialogue);
+        Singleton.events.office_cutscene.AddListener(Interact);
     }
     public override void Interact()
     {
@@ -22,4 +23,8 @@ public class InteractiveDialogue : Interactive
         Singleton.events.dialogue_end.RemoveListener(OnDialogueEnd);
         callback.Invoke();
     }
+/*    public void StartDialogue()
+    {
+        Singleton.events.dialogue_start_request.Invoke(dialogue);
+    }*/
 }

@@ -26,7 +26,7 @@ public class OnEnableInvoke : MonoBehaviour
     }
     IEnumerator WaitInvoke()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.1f);
         interactAction.Invoke();
         Debug.Log("Active");
     }

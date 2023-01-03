@@ -18,7 +18,7 @@ public struct DialogueData {
 }
 
 [Serializable]
-public struct DialogueOption 
+public struct DialogueOption
 {
     public string option;
     public DialogueSO next;

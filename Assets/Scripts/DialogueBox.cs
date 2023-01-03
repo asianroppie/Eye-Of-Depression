@@ -25,7 +25,8 @@ public class DialogueBox : MonoBehaviour
     {
         var btn = Instantiate(m_optionBtnPF);
         btn.GetComponentInChildren<TMP_Text>().text = option.option;
-        btn.GetComponent<Button>().onClick.AddListener(() => {
+        btn.GetComponent<Button>().onClick.AddListener(() => 
+        {
             m_optionBox.gameObject.SetActive(false);
             Singleton.events.dialogue_option_select.Invoke(option);
             ClearOptions();
@@ -59,7 +60,6 @@ public class DialogueBox : MonoBehaviour
                 foreach (var option in data.options)
                     AddOptionBtn(option);
             }
-            
             yield return new WaitUntil(() => Input.GetKeyDown(nextKey) || m_optionBox.gameObject.activeSelf);
         }
 

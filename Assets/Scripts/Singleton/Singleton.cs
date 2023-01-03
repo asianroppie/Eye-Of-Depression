@@ -37,6 +37,7 @@ public class Singleton : MonoBehaviour
         events.change_sprite = new UnityEvent();
         events.play_cutscene = new UnityEvent();
         events.office_cutscene = new UnityEvent();
+        events.test_pick = new UnityEvent();
 
         DontDestroyOnLoad(gameObject);
     }
@@ -56,6 +57,7 @@ public struct GameEvents
     public UnityEvent change_sprite;
     public UnityEvent play_cutscene;
     public UnityEvent office_cutscene;
+    public UnityEvent test_pick;
 }
 
 

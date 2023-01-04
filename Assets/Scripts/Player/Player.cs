@@ -32,7 +32,8 @@ public class Player : MonoBehaviour
         m_body = GetComponent<Rigidbody2D>();
         m_proximityGO = new List<GameObject>();
         Singleton.events.fade_called.AddListener(MovePosition);
-        Singleton.events.change_sprite.AddListener(ChangeSprite);
+        Singleton.events.change_outfit.AddListener(ChangeOutfit);
+        Singleton.events.change_character.AddListener(ChangeCharacter);
     }
 
 
@@ -84,11 +85,28 @@ public class Player : MonoBehaviour
             m_proximityGO.Add(collision.gameObject);
     }
 
-    public void ChangeSprite()
+    public void ChangeOutfit()
     {
-        animator.SetLayerWeight(1, 1);
+        if(Singleton.runtime.normie)
+        {
+            animator.SetLayerWeight(1, 1);
+        }
+        if(Singleton.runtime.gloomie)
+        {
+            animator.SetLayerWeight(3,1);
+        }
     }
-
+    public void ChangeCharacter()
+    {
+        if (Singleton.runtime.normie)
+        {
+            animator.SetLayerWeight(0, 1);
+        }
+        if (Singleton.runtime.gloomie)
+        {
+            animator.SetLayerWeight(2, 1);
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (m_proximityGO.Count > 0)

@@ -22,4 +22,5 @@ public struct DialogueOption
 {
     public string option;
     public DialogueSO next;
+    public int points;
 }

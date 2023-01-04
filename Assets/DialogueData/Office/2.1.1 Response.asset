@@ -10,16 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
-  m_Name: 2 OfficeDialogue
+  m_Name: 2.1.1 Response
   m_EditorClassIdentifier: 
   data:
-  - text: 'Co-worker:
+  - text: 'Normie''s thought:
 
-      Oh look, it''s Gloomie. You''re late again, not a surprise.'
-    options:
-    - option: '*Stay silent*'
-      next: {fileID: 11400000, guid: a5e31dd73db79244f99989e7128a9025, type: 2}
-      points: 0
-    - option: '*Defend Gloomie*'
-      next: {fileID: 11400000, guid: a33c2c5c8b0a25947848c3d4935527bf, type: 2}
-      points: 1
+      *I feel bad for him*'
+    options: []
+  - text: 'Gloomie''s thought:
+
+      *You''re such a failure Gloomie*'
+    options: []

@@ -8,6 +8,12 @@ public class InteractiveInvoke : Interactive
     public UnityEvent interactAction;
     [SerializeField] private GameObject beforeText;
     [SerializeField] private GameObject afterText;
+    protected override void Start()
+    {
+        base.Start();
+        //this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        //use this to hide pop object
+    }
     public override void Interact()
     {
         //Singleton.events.monologue_start_request.Invoke(monologue);

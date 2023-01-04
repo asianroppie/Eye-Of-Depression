@@ -20,7 +20,7 @@ public class Director : MonoBehaviour
     //when cutscene stop, invoke event for dialogue
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.3f);
         Singleton.events.office_cutscene.Invoke();
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class FadeBedroom : MonoBehaviour
 {
-    [SerializeField] private Player player;
     [SerializeField] private GameObject background1;
     [SerializeField] private GameObject background2;
     [SerializeField] private GameObject autoMonologue;
@@ -35,8 +34,7 @@ public class FadeBedroom : MonoBehaviour
         }
         if (Singleton.runtime.showered)
         {
-            //change character sprite with singleton event with player as a listener
-            Singleton.events.change_sprite.Invoke();
+            Singleton.events.change_outfit.Invoke();
         }
         animator.SetTrigger("FadeInBedroom");
     }

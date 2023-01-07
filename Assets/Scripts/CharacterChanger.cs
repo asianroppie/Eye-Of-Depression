@@ -8,6 +8,7 @@ public class CharacterChanger : MonoBehaviour
     public UnityEvent interactAction;
     private void OnEnable()
     {
+        //StartCoroutine(Wait());
         interactAction.Invoke();
     }
     public void ChangeToNormie()
@@ -28,4 +29,9 @@ public class CharacterChanger : MonoBehaviour
         Singleton.runtime.gloomie = false;
         Singleton.events.change_outfit.Invoke();
     }
+    /*IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.2f);
+        interactAction.Invoke();
+    }*/
 }

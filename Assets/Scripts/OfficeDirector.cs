@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Events;
 
-public class Director : MonoBehaviour
+public class OfficeDirector : MonoBehaviour
 {
     public PlayableDirector director;
     void Start()
@@ -20,7 +20,7 @@ public class Director : MonoBehaviour
     //when cutscene stop, invoke event for dialogue
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
         Singleton.events.office_cutscene.Invoke();
     }
 }

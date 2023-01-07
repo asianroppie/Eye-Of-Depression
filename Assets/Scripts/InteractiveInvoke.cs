@@ -45,6 +45,7 @@ public class InteractiveInvoke : Interactive
         {
             Singleton.events.fade_to_scene.Invoke();
         }
+        Destroy(this.gameObject);
     }
     public void ResponsePop()
     {

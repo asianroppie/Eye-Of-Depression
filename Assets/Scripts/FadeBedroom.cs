@@ -7,18 +7,11 @@ public class FadeBedroom : MonoBehaviour
 {
     [SerializeField] private GameObject background1;
     [SerializeField] private GameObject background2;
-    [SerializeField] private GameObject autoMonologue;
     public Animator animator;
     
     void Start()
     {
         Singleton.events.fade_to_level.AddListener(FadeToLevel);
-
-        autoMonologue.SetActive(true);
-        if (autoMonologue.activeInHierarchy)
-        {
-            StartCoroutine(Wait());
-        }
     }
     public void FadeToLevel()
     {
@@ -38,9 +31,5 @@ public class FadeBedroom : MonoBehaviour
         }
         animator.SetTrigger("FadeInBedroom");
     }
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(4f);
-        autoMonologue.SetActive(false);
-    }
+
 }

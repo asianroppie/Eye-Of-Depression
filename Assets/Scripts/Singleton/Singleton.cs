@@ -36,10 +36,12 @@ public class Singleton : MonoBehaviour
         events.fade_called = new UnityEvent();
         events.change_outfit = new UnityEvent();
         events.change_character = new UnityEvent();
+        events.change_normie_work = new UnityEvent();
         events.play_cutscene = new UnityEvent();
         events.office_cutscene = new UnityEvent();
         events.test_pick = new UnityEvent();
-        events.flipPlayer = new UnityEvent();
+        events.flip_player = new UnityEvent();
+        events.auto_monologue = new UnityEvent();
 
         DontDestroyOnLoad(gameObject);
     }
@@ -58,10 +60,12 @@ public struct GameEvents
     public UnityEvent fade_called;
     public UnityEvent change_outfit;
     public UnityEvent change_character;
+    public UnityEvent change_normie_work;
     public UnityEvent play_cutscene;
     public UnityEvent office_cutscene;
     public UnityEvent test_pick;
-    public UnityEvent flipPlayer;
+    public UnityEvent flip_player;
+    public UnityEvent auto_monologue;
 }
 
 

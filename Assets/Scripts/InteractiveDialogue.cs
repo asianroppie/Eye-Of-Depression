@@ -28,7 +28,7 @@ public class InteractiveDialogue : Interactive
     public void DialogueInvoke()
     {
         if(Singleton.runtime.tempOption.points == 0)
-        {
+        {   
             temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Office/2.1.1 Response.asset", typeof(DialogueSO));
             Singleton.events.dialogue_start_request.Invoke(temp);
             //Debug.Log(temp.name);

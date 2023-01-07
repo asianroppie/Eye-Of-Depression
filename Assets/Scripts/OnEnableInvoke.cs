@@ -12,8 +12,8 @@ public class OnEnableInvoke : MonoBehaviour
     }
     IEnumerator WaitInvoke()
     {
+        Singleton.events.flip_player.Invoke();
         yield return new WaitForSeconds(0.1f);
         interactAction.Invoke();
-        Singleton.events.flipPlayer.Invoke();
     }
 }

@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
         Singleton.events.fade_called.AddListener(MovePosition);
         Singleton.events.change_outfit.AddListener(ChangeOutfit);
         Singleton.events.change_character.AddListener(ChangeCharacter);
+        Singleton.events.flip_player.AddListener(Flip);
     }
 
 
@@ -89,24 +90,40 @@ public class Player : MonoBehaviour
     {
         if(Singleton.runtime.normie)
         {
+            animator.SetLayerWeight(0, 0);
+            animator.SetLayerWeight(2, 0);
+            animator.SetLayerWeight(3, 0);
             animator.SetLayerWeight(1, 1);
         }
         if(Singleton.runtime.gloomie)
         {
-            animator.SetLayerWeight(3,1);
+            animator.SetLayerWeight(0, 0);
+            animator.SetLayerWeight(2, 0);
+            animator.SetLayerWeight(1, 0);
+            animator.SetLayerWeight(3, 1);
         }
     }
     public void ChangeCharacter()
     {
         if (Singleton.runtime.normie)
         {
+            animator.SetLayerWeight(1, 0);
+            animator.SetLayerWeight(2, 0);
+            animator.SetLayerWeight(3, 0);
             animator.SetLayerWeight(0, 1);
         }
         if (Singleton.runtime.gloomie)
         {
+            animator.SetLayerWeight(0, 0);
+            animator.SetLayerWeight(1, 0);
+            animator.SetLayerWeight(3, 0);
             animator.SetLayerWeight(2, 1);
         }
     }
+    /*public void ChangeNormieWork()
+    {
+        animator.SetLayerWeight(1, 1);
+    }*/
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (m_proximityGO.Count > 0)

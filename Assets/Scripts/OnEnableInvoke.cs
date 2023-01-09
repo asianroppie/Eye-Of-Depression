@@ -15,5 +15,6 @@ public class OnEnableInvoke : MonoBehaviour
         Singleton.events.flip_player.Invoke();
         yield return new WaitForSeconds(0.1f);
         interactAction.Invoke();
+        Destroy(this);
     }
 }

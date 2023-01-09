@@ -23,7 +23,7 @@ public class FadeBedroom : MonoBehaviour
         background2.SetActive(true);
         if (!Singleton.runtime.showered)
         {
-            Singleton.events.fade_called.Invoke();
+            Singleton.events.move_position.Invoke(-6f);
         }
         if (Singleton.runtime.showered)
         {

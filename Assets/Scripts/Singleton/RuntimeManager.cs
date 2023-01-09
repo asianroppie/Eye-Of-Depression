@@ -39,6 +39,7 @@ public class RuntimeManager : MonoBehaviour
     {
         m_freezed = true;
         Time.timeScale = 0;
+        Singleton.events.change_state.Invoke();
     }
 
 

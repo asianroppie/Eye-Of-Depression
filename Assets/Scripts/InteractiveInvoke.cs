@@ -16,7 +16,6 @@ public class InteractiveInvoke : Interactive
     }
     public override void Interact()
     {
-        //Singleton.events.monologue_start_request.Invoke(monologue);
         if (!Singleton.runtime.onMonologue)
         {
             interactAction.Invoke();
@@ -61,9 +60,9 @@ public class InteractiveInvoke : Interactive
         Singleton.events.fade_to_level.Invoke();
         Destroy(this.gameObject);
     }
-    public void TestResponse()
+    public void ResponseWorkdesk()
     {
-        Singleton.events.play_cutscene.Invoke();
+        StartCoroutine(StartWorkdesk());
     }
     IEnumerator startBeforeText()
     {
@@ -104,7 +103,17 @@ public class InteractiveInvoke : Interactive
         beforeText.SetActive(true);
         yield return new WaitForSeconds(2.0f);
         beforeText.SetActive(false);
-        Destroy(this.gameObject);
         Singleton.runtime.onMonologue = false;
+        Destroy(this.gameObject);
+    }
+    IEnumerator StartWorkdesk()
+    {
+        Singleton.runtime.onMonologue = true;
+        beforeText.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        beforeText.SetActive(false);
+        Singleton.runtime.onMonologue = false;
+        Singleton.events.fade_to_work.Invoke();
+        Destroy(this.gameObject);
     }
 }

@@ -33,7 +33,7 @@ public class Singleton : MonoBehaviour
         events.dialogue_option_select = new UnityEvent<DialogueOption>();
         events.fade_to_level = new UnityEvent();
         events.fade_to_scene = new UnityEvent();
-        events.fade_called = new UnityEvent();
+        events.move_position = new UnityEvent<float>();
         events.change_outfit = new UnityEvent();
         events.change_character = new UnityEvent();
         events.change_normie_work = new UnityEvent();
@@ -41,7 +41,11 @@ public class Singleton : MonoBehaviour
         events.office_cutscene = new UnityEvent();
         events.test_pick = new UnityEvent();
         events.flip_player = new UnityEvent();
-        events.auto_monologue = new UnityEvent();
+        events.train_monologue = new UnityEvent();
+        events.bedroom_monologue = new UnityEvent();
+        events.change_state = new UnityEvent();
+        events.fade_to_work = new UnityEvent();
+        events.work_dialogue = new UnityEvent();
 
         DontDestroyOnLoad(gameObject);
     }
@@ -57,7 +61,7 @@ public struct GameEvents
     public UnityEvent<DialogueOption> dialogue_option_select;
     public UnityEvent fade_to_level;
     public UnityEvent fade_to_scene;
-    public UnityEvent fade_called;
+    public UnityEvent<float> move_position;
     public UnityEvent change_outfit;
     public UnityEvent change_character;
     public UnityEvent change_normie_work;
@@ -65,7 +69,11 @@ public struct GameEvents
     public UnityEvent office_cutscene;
     public UnityEvent test_pick;
     public UnityEvent flip_player;
-    public UnityEvent auto_monologue;
+    public UnityEvent train_monologue;
+    public UnityEvent bedroom_monologue;
+    public UnityEvent change_state;
+    public UnityEvent fade_to_work;
+    public UnityEvent work_dialogue;
 }
 
 

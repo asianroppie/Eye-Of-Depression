@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Fade : MonoBehaviour
 {
+    [SerializeField] private GameObject background1;
+    [SerializeField] private GameObject background2;
     public Animator animator;
-    public static Fade instance;
+    //public static Fade instance;
     private void Awake()
     {
-        if (instance != null)
+        /*if (instance != null)
         {
             Destroy(gameObject);
         }
@@ -17,11 +19,13 @@ public class Fade : MonoBehaviour
         {
             instance = this;
         }
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);*/
     }
     void Start()
     {
         Singleton.events.fade_to_scene.AddListener(FadeToScene);
+        Singleton.events.fade_to_level.AddListener(FadeToLevel);
+        Singleton.events.fade_to_work.AddListener(FadeToWork);
     }
     public void FadeToScene()
     {
@@ -29,9 +33,39 @@ public class Fade : MonoBehaviour
     }
     public void OnFadeComplete()
     {
-        Singleton.events.fade_called.Invoke();
+        Singleton.events.move_position.Invoke(-6f);
         Singleton.runtime.showered = false;
         animator.SetTrigger("FadeIn");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void FadeToLevel()
+    {
+        animator.SetTrigger("FadeOutLevel");
+    }
+    public void OnFadeLevelComplete()
+    {
+        background1.SetActive(false);
+        background2.SetActive(true);
+        if (!Singleton.runtime.showered)
+        {
+            Singleton.events.move_position.Invoke(-6f);
+        }
+        if (Singleton.runtime.showered)
+        {
+            Singleton.events.change_outfit.Invoke();
+        }
+        animator.SetTrigger("FadeIn");
+    }
+    public void FadeToWork()
+    {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutWork");
+    }
+    public void OnFadeWorkComplete()
+    {
+        animator.SetTrigger("FadeIn");
+        Singleton.events.move_position.Invoke(5.4f);
+        Singleton.runtime.UnFreeze();
+        Singleton.events.work_dialogue.Invoke();
     }
 }

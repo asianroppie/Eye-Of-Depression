@@ -18,6 +18,6 @@ public class TrainDirector : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(4.2f);
-        Singleton.events.auto_monologue.Invoke();
+        Singleton.events.train_monologue.Invoke();
     }
 }

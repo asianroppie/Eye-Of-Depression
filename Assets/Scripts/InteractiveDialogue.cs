@@ -14,6 +14,7 @@ public class InteractiveDialogue : Interactive
         base.Start();
         //Singleton.events.dialogue_after_cutscene.AddListener(StartDialogue);
         Singleton.events.office_cutscene.AddListener(Interact);
+        Singleton.events.work_dialogue.AddListener(Interact);
     }
     public override void Interact()
     {
@@ -24,6 +25,7 @@ public class InteractiveDialogue : Interactive
     {
         Singleton.events.dialogue_end.RemoveListener(OnDialogueEnd);
         callback.Invoke();
+        Destroy(this);
     }
     public void DialogueInvoke()
     {
@@ -31,13 +33,12 @@ public class InteractiveDialogue : Interactive
         {   
             temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Office/2.1.1 Response.asset", typeof(DialogueSO));
             Singleton.events.dialogue_start_request.Invoke(temp);
-            //Debug.Log(temp.name);
         }
         else if(Singleton.runtime.tempOption.points == 1)
         {
             temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Office/2.2.1 Response.asset", typeof(DialogueSO));
             Singleton.events.dialogue_start_request.Invoke(temp);
-            //Debug.Log(temp.name);
         }
+        Destroy(this.gameObject);
     }
 }

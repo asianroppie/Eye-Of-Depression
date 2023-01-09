@@ -31,10 +31,11 @@ public class Player : MonoBehaviour
     {
         m_body = GetComponent<Rigidbody2D>();
         m_proximityGO = new List<GameObject>();
-        Singleton.events.fade_called.AddListener(MovePosition);
+        Singleton.events.move_position.AddListener(MovePosition);
         Singleton.events.change_outfit.AddListener(ChangeOutfit);
         Singleton.events.change_character.AddListener(ChangeCharacter);
         Singleton.events.flip_player.AddListener(Flip);
+        Singleton.events.change_state.AddListener(ChangeState);
     }
 
 
@@ -73,9 +74,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void MovePosition()
+    public void MovePosition(float xPosition)
     {
-        this.gameObject.transform.position = new Vector2(-6, this.gameObject.transform.position.y);
+        this.gameObject.transform.position = new Vector2(xPosition, this.gameObject.transform.position.y);
         this.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
         m_FacingRight = true;
     }
@@ -120,10 +121,10 @@ public class Player : MonoBehaviour
             animator.SetLayerWeight(2, 1);
         }
     }
-    /*public void ChangeNormieWork()
+    public void ChangeState()
     {
-        animator.SetLayerWeight(1, 1);
-    }*/
+        animator.SetFloat("Speed", 0);
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (m_proximityGO.Count > 0)

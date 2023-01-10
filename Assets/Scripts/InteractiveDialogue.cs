@@ -9,23 +9,36 @@ public class InteractiveDialogue : Interactive
     public DialogueSO dialogue;
     public UnityEvent callback;
     public DialogueSO temp;
+    public bool spoken = false;
+    //public GameObject player;
     protected override void Start()
     {
         base.Start();
-        //Singleton.events.dialogue_after_cutscene.AddListener(StartDialogue);
+        //player = GameObject.FindGameObjectWithTag("Player");
         Singleton.events.office_cutscene.AddListener(Interact);
         Singleton.events.work_dialogue.AddListener(Interact);
+        Singleton.events.work_dialogue.AddListener(TurnOnSprite);
+        Singleton.events.lunch_dialogue.AddListener(Disable);
     }
     public override void Interact()
     {
-        Singleton.events.dialogue_start_request.Invoke(dialogue);
-        Singleton.events.dialogue_end.AddListener(OnDialogueEnd);
+        if(!spoken)
+        {
+            Singleton.events.dialogue_start_request.Invoke(dialogue);
+            //Flip();
+            Singleton.events.dialogue_end.AddListener(OnDialogueEnd);
+            this.gameObject.tag = "Untagged";
+            foreach (Transform child in transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
     }
     public void OnDialogueEnd()
     {
         Singleton.events.dialogue_end.RemoveListener(OnDialogueEnd);
+        spoken = true;
         callback.Invoke();
-        Destroy(this);
     }
     public void DialogueInvoke()
     {
@@ -40,5 +53,32 @@ public class InteractiveDialogue : Interactive
             Singleton.events.dialogue_start_request.Invoke(temp);
         }
         Destroy(this.gameObject);
+    }
+    public void TurnOnSprite()
+    {
+        gameObject.GetComponent<Renderer>().enabled = true;
+    }
+    public void Disable()
+    {
+        this.gameObject.SetActive(false);
+    }
+    /*public void Flip()
+    {
+        Vector3 theScale = transform.localScale;
+        if(player.transform.position.x > this.gameObject.transform.position.x)
+        {
+            theScale.x = 0.6f;
+        }
+        else if(player.transform.position.x < this.gameObject.transform.position.x)
+        {
+            theScale.x = -0.6f;
+        }
+        transform.localScale = theScale;
+    }*/
+    public void Flip()
+    {
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 }

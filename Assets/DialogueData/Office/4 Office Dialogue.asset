@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
-  m_Name: 3 Office Dialogue
+  m_Name: 4 Office Dialogue
   m_EditorClassIdentifier: 
   data:
-  - text: 'Boss:
-
-      Hey Gloomie, I have another extra work that you must do.
-      Be sure to get these files ready by tonight.'
-    options: []
-  - text: "Gloomie:\n\u2026 Okay boss."
-    options: []
+  - text: "Gloomie's thought:\nI really need some break from this\u2026"
+    options:
+    - option: '*Stay Silent*'
+      next: {fileID: 0}
+      points: 0
+    - option: '*Offer help*'
+      next: {fileID: 11400000, guid: 2e5bbde050d533142b1ecf96f1bc4095, type: 2}
+      points: 1

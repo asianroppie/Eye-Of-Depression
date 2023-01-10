@@ -46,6 +46,7 @@ public class Singleton : MonoBehaviour
         events.change_state = new UnityEvent();
         events.fade_to_work = new UnityEvent();
         events.work_dialogue = new UnityEvent();
+        events.lunch_dialogue = new UnityEvent();
 
         DontDestroyOnLoad(gameObject);
     }
@@ -74,6 +75,7 @@ public struct GameEvents
     public UnityEvent change_state;
     public UnityEvent fade_to_work;
     public UnityEvent work_dialogue;
+    public UnityEvent lunch_dialogue;
 }
 
 

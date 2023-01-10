@@ -10,13 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
-  m_Name: 3 Office Dialogue
+  m_Name: 4.1 Response
   m_EditorClassIdentifier: 
   data:
-  - text: 'Boss:
-
-      Hey Gloomie, I have another extra work that you must do.
-      Be sure to get these files ready by tonight.'
+  - text: "Normie:\nHey, you want some help with that? I don\u2019t have much work
+      currently."
     options: []
-  - text: "Gloomie:\n\u2026 Okay boss."
+  - text: "Gloomie:\nIt\u2019s okay Normie, I got this. Thank you for offering."
+    options: []
+  - text: 'Normie:
+
+      Alright, but hey if you need some help let me know.'
+    options: []
+  - text: 'Gloomie:
+
+      Will do, Thank you.'
     options: []

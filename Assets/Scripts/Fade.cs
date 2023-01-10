@@ -30,6 +30,7 @@ public class Fade : MonoBehaviour
     public void FadeToScene()
     {
         animator.SetTrigger("FadeOut");
+        Singleton.runtime.Freeze();
     }
     public void OnFadeComplete()
     {
@@ -37,6 +38,7 @@ public class Fade : MonoBehaviour
         Singleton.runtime.showered = false;
         animator.SetTrigger("FadeIn");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Singleton.runtime.UnFreeze();
     }
     public void FadeToLevel()
     {
@@ -67,5 +69,17 @@ public class Fade : MonoBehaviour
         Singleton.events.move_position.Invoke(5.4f);
         Singleton.runtime.UnFreeze();
         Singleton.events.work_dialogue.Invoke();
+    }
+    public void FadeToLunch()
+    {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutLunch");
+    }
+    public void OnFadeLunchComplete()
+    {
+        animator.SetTrigger("FadeIn");
+        Singleton.events.move_position.Invoke(5.4f);
+        Singleton.runtime.UnFreeze();
+        Singleton.events.lunch_dialogue.Invoke();
     }
 }

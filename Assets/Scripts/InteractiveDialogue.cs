@@ -15,10 +15,8 @@ public class InteractiveDialogue : Interactive
     {
         base.Start();
         //player = GameObject.FindGameObjectWithTag("Player");
-        Singleton.events.office_cutscene.AddListener(Interact);
         Singleton.events.work_dialogue.AddListener(Interact);
         Singleton.events.work_dialogue.AddListener(TurnOnSprite);
-        Singleton.events.lunch_dialogue.AddListener(Disable);
     }
     public override void Interact()
     {
@@ -57,10 +55,6 @@ public class InteractiveDialogue : Interactive
     public void TurnOnSprite()
     {
         gameObject.GetComponent<Renderer>().enabled = true;
-    }
-    public void Disable()
-    {
-        this.gameObject.SetActive(false);
     }
     /*public void Flip()
     {

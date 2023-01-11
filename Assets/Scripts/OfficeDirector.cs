@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class OfficeDirector : MonoBehaviour
 {
     public PlayableDirector director;
+    public UnityEvent firstAction;
     void Start()
     {
         Singleton.events.play_cutscene.AddListener(Play);
@@ -21,6 +22,6 @@ public class OfficeDirector : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(0.1f);
-        Singleton.events.office_cutscene.Invoke();
+        firstAction.Invoke();
     }
 }

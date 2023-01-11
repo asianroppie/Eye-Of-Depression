@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class Fade : MonoBehaviour
@@ -8,19 +9,7 @@ public class Fade : MonoBehaviour
     [SerializeField] private GameObject background1;
     [SerializeField] private GameObject background2;
     public Animator animator;
-    //public static Fade instance;
-    private void Awake()
-    {
-        /*if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-        }
-        DontDestroyOnLoad(gameObject);*/
-    }
+    public UnityEvent lunchAction;
     void Start()
     {
         Singleton.events.fade_to_scene.AddListener(FadeToScene);
@@ -80,6 +69,18 @@ public class Fade : MonoBehaviour
         animator.SetTrigger("FadeIn");
         Singleton.events.move_position.Invoke(5.4f);
         Singleton.runtime.UnFreeze();
-        Singleton.events.lunch_dialogue.Invoke();
+        lunchAction.Invoke();
+        Singleton.events.flip_player.Invoke();
+    }
+    public void FadeToCafetaria()
+    {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutCafetaria");
+    }
+    public void OnFadeCafetariaComplete()
+    {
+        animator.SetTrigger("FadeIn");
+        Singleton.events.move_position.Invoke(-6f);
+        Singleton.runtime.UnFreeze();
     }
 }

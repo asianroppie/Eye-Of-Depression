@@ -64,6 +64,10 @@ public class InteractiveInvoke : Interactive
     {
         StartCoroutine(StartWorkdesk());
     }
+    public void ResponseCafetariaDoor()
+    {
+        Singleton.events.fade_to_cafetaria.Invoke();
+    }
     IEnumerator startBeforeText()
     {
         if (Singleton.runtime.onMonologue)

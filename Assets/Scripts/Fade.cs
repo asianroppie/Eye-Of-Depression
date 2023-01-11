@@ -10,11 +10,13 @@ public class Fade : MonoBehaviour
     [SerializeField] private GameObject background2;
     public Animator animator;
     public UnityEvent lunchAction;
+    public UnityEvent cafetariaAction;
     void Start()
     {
         Singleton.events.fade_to_scene.AddListener(FadeToScene);
         Singleton.events.fade_to_level.AddListener(FadeToLevel);
         Singleton.events.fade_to_work.AddListener(FadeToWork);
+        Singleton.events.fade_to_cafetaria.AddListener(FadeToCafetaria);
     }
     public void FadeToScene()
     {
@@ -80,7 +82,10 @@ public class Fade : MonoBehaviour
     public void OnFadeCafetariaComplete()
     {
         animator.SetTrigger("FadeIn");
-        Singleton.events.move_position.Invoke(-6f);
         Singleton.runtime.UnFreeze();
+        background1.SetActive(false);
+        background2.SetActive(true);
+        Singleton.events.move_position.Invoke(1.5f);
+        cafetariaAction.Invoke();
     }
 }

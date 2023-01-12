@@ -18,7 +18,7 @@ MonoBehaviour:
       *I should probably get him something.*'
     options:
     - option: '*Buy Gloomie snacks'
-      next: {fileID: 11400000, guid: f09821d9964113d44972849628321395, type: 2}
+      next: {fileID: 0}
       points: 1
     - option: '*Don''t buy Gloomie snacks*'
       next: {fileID: 0}

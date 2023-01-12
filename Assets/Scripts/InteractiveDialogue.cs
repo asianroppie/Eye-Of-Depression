@@ -52,6 +52,19 @@ public class InteractiveDialogue : Interactive
         }
         Destroy(this.gameObject);
     }
+    public void DialogueInvoke2()
+    {
+        if (Singleton.runtime.tempOption.points == 0)
+        {
+            Singleton.events.fade_to_back_from_cafetaria.Invoke();
+        }
+        else if (Singleton.runtime.tempOption.points == 1)
+        {
+            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Office/6.1 Response.asset", typeof(DialogueSO));
+            Singleton.events.dialogue_start_request.Invoke(temp);
+        }
+        Destroy(this.gameObject);
+    }
     public void TurnOnSprite()
     {
         gameObject.GetComponent<Renderer>().enabled = true;

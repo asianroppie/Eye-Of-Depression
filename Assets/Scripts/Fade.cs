@@ -9,14 +9,17 @@ public class Fade : MonoBehaviour
     [SerializeField] private GameObject background1;
     [SerializeField] private GameObject background2;
     public Animator animator;
+    public UnityEvent workAction;
     public UnityEvent lunchAction;
     public UnityEvent cafetariaAction;
+    public UnityEvent officeAction;
     void Start()
     {
         Singleton.events.fade_to_scene.AddListener(FadeToScene);
         Singleton.events.fade_to_level.AddListener(FadeToLevel);
         Singleton.events.fade_to_work.AddListener(FadeToWork);
         Singleton.events.fade_to_cafetaria.AddListener(FadeToCafetaria);
+        Singleton.events.fade_to_office.AddListener(FadeToOffice);
     }
     public void FadeToScene()
     {
@@ -59,7 +62,7 @@ public class Fade : MonoBehaviour
         animator.SetTrigger("FadeIn");
         Singleton.events.move_position.Invoke(5.4f);
         Singleton.runtime.UnFreeze();
-        Singleton.events.work_dialogue.Invoke();
+        workAction.Invoke();
     }
     public void FadeToLunch()
     {
@@ -87,5 +90,20 @@ public class Fade : MonoBehaviour
         background2.SetActive(true);
         Singleton.events.move_position.Invoke(1.5f);
         cafetariaAction.Invoke();
+    }
+    public void FadeToOffice()
+    {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutOffice");
+    }
+    public void OnFadeOfficeComplete()
+    {
+        animator.SetTrigger("FadeIn");
+        Singleton.runtime.UnFreeze();
+        background2.SetActive(false);
+        background1.SetActive(true);
+        officeAction.Invoke();
+        Singleton.events.move_position.Invoke(5.4f);
+        Singleton.events.flip_player.Invoke();
     }
 }

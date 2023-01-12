@@ -15,8 +15,6 @@ public class InteractiveDialogue : Interactive
     {
         base.Start();
         //player = GameObject.FindGameObjectWithTag("Player");
-        Singleton.events.work_dialogue.AddListener(Interact);
-        Singleton.events.work_dialogue.AddListener(TurnOnSprite);
     }
     public override void Interact()
     {
@@ -50,20 +48,38 @@ public class InteractiveDialogue : Interactive
             temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Office/2.2.1 Response.asset", typeof(DialogueSO));
             Singleton.events.dialogue_start_request.Invoke(temp);
         }
+        Singleton.events.dialogue_end.AddListener(OnDialogueEnd);
         Destroy(this.gameObject);
     }
-    public void DialogueInvoke2()
+    public void CafetariaDialogue()
     {
         if (Singleton.runtime.tempOption.points == 0)
         {
-            Singleton.events.fade_to_back_from_cafetaria.Invoke();
+            Singleton.events.fade_to_office.Invoke();
         }
         else if (Singleton.runtime.tempOption.points == 1)
         {
             temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Office/6.1 Response.asset", typeof(DialogueSO));
+            //Singleton.events.dialogue_start_request.Invoke(temp);
+            //Singleton.events.fade_to_office.Invoke();
+        }
+        //Destroy(this);
+    }
+    public void OfficeDialogue()
+    {
+        if (Singleton.runtime.tempOption.points == 0)
+        {
+            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Office/6.1.2 Response.asset", typeof(DialogueSO));
+            Singleton.events.dialogue_start_request.Invoke(temp);
+            //Singleton.events.fade_to_office.Invoke();
+        }
+        else if (Singleton.runtime.tempOption.points == 1)
+        {
+            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Office/6.1.1 Response.asset", typeof(DialogueSO));
             Singleton.events.dialogue_start_request.Invoke(temp);
         }
-        Destroy(this.gameObject);
+        Singleton.events.dialogue_end.AddListener(OnDialogueEnd);
+        Destroy(this);
     }
     public void TurnOnSprite()
     {

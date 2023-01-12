@@ -25,15 +25,12 @@ public class RuntimeManager : MonoBehaviour
         Singleton.events.dialogue_option_select.AddListener(DialogueStorage);
     }
 
-
     public bool Freezed => m_freezed;
-
 
     public void WriteManifest() 
     {
         // Save data logic. TODO LATER!!!
     }
-
 
     public void Freeze()
     {
@@ -41,7 +38,6 @@ public class RuntimeManager : MonoBehaviour
         Time.timeScale = 0;
         Singleton.events.change_state.Invoke();
     }
-
 
     public void UnFreeze()
     {

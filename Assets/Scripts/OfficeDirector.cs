@@ -11,7 +11,8 @@ public class OfficeDirector : MonoBehaviour
     void Start()
     {
         Singleton.events.play_cutscene.AddListener(Play);
-        StartCoroutine(Wait());
+        //StartCoroutine(Wait());
+        firstAction.Invoke();
     }
 
     public void Play()
@@ -19,9 +20,4 @@ public class OfficeDirector : MonoBehaviour
         director.Play();
     }
     //when cutscene stop, invoke event for dialogue
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(0.1f);
-        firstAction.Invoke();
-    }
 }

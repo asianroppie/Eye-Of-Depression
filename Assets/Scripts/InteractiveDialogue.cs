@@ -40,46 +40,31 @@ public class InteractiveDialogue : Interactive
     {
         if(Singleton.runtime.tempOption.points == 0)
         {   
-            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Office/2.1.1 Response.asset", typeof(DialogueSO));
+            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Day 1/2.1.1 Response.asset", typeof(DialogueSO));
             Singleton.events.dialogue_start_request.Invoke(temp);
         }
         else if(Singleton.runtime.tempOption.points == 1)
         {
-            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Office/2.2.1 Response.asset", typeof(DialogueSO));
+            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Day 1/2.2.1 Response.asset", typeof(DialogueSO));
             Singleton.events.dialogue_start_request.Invoke(temp);
         }
         Singleton.events.dialogue_end.AddListener(OnDialogueEnd);
         Destroy(this.gameObject);
     }
-    public void CafetariaDialogue()
-    {
-        if (Singleton.runtime.tempOption.points == 0)
-        {
-            Singleton.events.fade_to_office.Invoke();
-        }
-        else if (Singleton.runtime.tempOption.points == 1)
-        {
-            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Office/6.1 Response.asset", typeof(DialogueSO));
-            //Singleton.events.dialogue_start_request.Invoke(temp);
-            //Singleton.events.fade_to_office.Invoke();
-        }
-        //Destroy(this);
-    }
     public void OfficeDialogue()
     {
         if (Singleton.runtime.tempOption.points == 0)
         {
-            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Office/6.1.2 Response.asset", typeof(DialogueSO));
+            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Day 1/6.1.2 Response.asset", typeof(DialogueSO));
             Singleton.events.dialogue_start_request.Invoke(temp);
             //Singleton.events.fade_to_office.Invoke();
         }
         else if (Singleton.runtime.tempOption.points == 1)
         {
-            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Office/6.1.1 Response.asset", typeof(DialogueSO));
+            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Day 1/6.1.1 Response.asset", typeof(DialogueSO));
             Singleton.events.dialogue_start_request.Invoke(temp);
         }
         Singleton.events.dialogue_end.AddListener(OnDialogueEnd);
-        Destroy(this);
     }
     public void TurnOnSprite()
     {

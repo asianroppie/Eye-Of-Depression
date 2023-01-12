@@ -11,7 +11,7 @@ public class Fade : MonoBehaviour
     public Animator animator;
     public UnityEvent workAction;
     public UnityEvent lunchAction;
-    public UnityEvent cafetariaAction;
+    public UnityEvent secondSceneAction;
     public UnityEvent officeAction;
     void Start()
     {
@@ -89,12 +89,11 @@ public class Fade : MonoBehaviour
         background1.SetActive(false);
         background2.SetActive(true);
         Singleton.events.move_position.Invoke(1.5f);
-        cafetariaAction.Invoke();
+        secondSceneAction.Invoke();
     }
     public void FadeToOffice()
     {
         Singleton.runtime.Freeze();
-        animator.SetTrigger("FadeOutOffice");
     }
     public void OnFadeOfficeComplete()
     {
@@ -105,5 +104,31 @@ public class Fade : MonoBehaviour
         officeAction.Invoke();
         Singleton.events.move_position.Invoke(5.4f);
         Singleton.events.flip_player.Invoke();
+    }
+    public void FadeToLunch2()
+    {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutLunch2");
+    }
+    public void OnFadeLunch2Complete()
+    {
+        animator.SetTrigger("FadeIn");
+        Singleton.runtime.UnFreeze();
+        Singleton.events.move_position.Invoke(5.4f);
+        lunchAction.Invoke();
+    }
+    public void FadeToBreakroom()
+    {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutBreakroom");
+    }
+    public void OnFadeBreakroomComplete()
+    {
+        animator.SetTrigger("FadeIn");
+        Singleton.runtime.UnFreeze();
+        background1.SetActive(false);
+        background2.SetActive(true);
+        Singleton.events.move_position.Invoke(-6f);
+        secondSceneAction.Invoke();
     }
 }

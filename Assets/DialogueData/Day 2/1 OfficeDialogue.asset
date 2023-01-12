@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
+  m_Name: 1 OfficeDialogue
+  m_EditorClassIdentifier: 
+  data:
+  - text: 'Alex:
+
+      Morning Jason.'
+    options: []
+  - text: 'Jason:
+
+      Oh, Morning Alex!'
+    options: []
+  - text: 'Alex''s thought:
+
+      *He looks a bit off today*'
+    options: []
+  - text: "Alex:\nHow\u2019ve you been doing?"
+    options: []
+  - text: "Jason:\nI\u2019ve been doing okay, how about you?"
+    options: []
+  - text: 'Alex:
+
+      Been doing good, hey it looks like you have a lot of work
+      for today huh? Good luck with your work Jason.'
+    options: []
+  - text: 'Jason:
+
+      Thank you Alex, I appreciate it.'
+    options: []

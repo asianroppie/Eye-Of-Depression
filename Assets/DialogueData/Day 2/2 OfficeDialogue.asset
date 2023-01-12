@@ -10,16 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
-  m_Name: 6 OfficeDialogue
+  m_Name: 2 OfficeDialogue
   m_EditorClassIdentifier: 
   data:
-  - text: 'Normie''s thought:
+  - text: "Alex:\n*Finally it\u2019s lunch time*"
+    options: []
+  - text: 'Alex:
 
-      *I should probably get him something.*'
-    options:
-    - option: '*Buy Gloomie snacks'
-      next: {fileID: 0}
-      points: 1
-    - option: '*Don''t buy Gloomie snacks*'
-      next: {fileID: 0}
-      points: 0
+      *Gloomie left earlier, a bit unusual for him*'
+    options: []
+  - text: "Alex:\n*Well, I\u2019m going to head up to the breakroom for a bit*"
+    options: []

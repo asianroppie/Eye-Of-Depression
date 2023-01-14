@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
+  m_Name: 5.1 Response
+  m_EditorClassIdentifier: 
+  data:
+  - text: 'Alex:
+
+      Hey, I know life has been tough lately and everything seems
+      to be very draining for you.'
+    options: []
+  - text: "Alex:\nBut keep pushing Jason. Personally, I believe that there\u2019s
+      always a light at the end of the tunnel."
+    options: []
+  - text: 'Alex:
+
+      And even if life has kicked you down, you can push through
+      it and stand back up.'
+    options: []
+  - text: 'Alex:
+
+      You can take as much time to stand back up, go at your own
+      pace.'
+    options: []
+  - text: "Alex:\nJust know when you\u2019re down, there are other people who care
+      about you and will be there for you when you need someone to listen or talk
+      to."
+    options: []
+  - text: "Jason:\n*Maybe he\u2019s right\u2026*"
+    options: []
+  - text: 'Jason:
+
+      Thank you Alex, I really needed that. I appreciate you for
+      taking your time to talk to me.'
+    options: []
+  - text: "Alex:\nNo problem Jason, I\u2019m here for you if you ever want to vent
+      or just talk."
+    options: []
+  - text: "Jason:\nThank you, Alex\u2026 Thank you."
+    options: []

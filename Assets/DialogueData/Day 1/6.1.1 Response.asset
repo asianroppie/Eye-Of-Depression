@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: 6.1.1 Response
   m_EditorClassIdentifier: 
   data:
-  - text: 'Normie:
+  - text: 'Alex:
 
-      Hey Gloomie, we know you probably have no time to buy any
-      so we got you snacks and a drink'
+      Hey Jason, we know you probably have no time to buy any so
+      we got you snacks and a drink'
     options: []
-  - text: "Gloomie:\nThat\u2019s very considerate of you guys, thank you so much!"
+  - text: "Jason:\nThat\u2019s very considerate of you guys, thank you so much!"
     options: []
-  - text: 'Female Co-worker:
+  - text: 'Lucy:
 
-      No problem Gloomie, hey good luck on those tasks!'
+      No problem Jason, hey good luck on those tasks!'
     options: []
-  - text: 'Gloomie:
+  - text: 'Jason:
 
       Thank you Lucy. Enjoy your lunch guys'
     options: []
@@ -32,8 +32,7 @@ MonoBehaviour:
 
       Thank you!'
     options: []
-  - text: 'Jason''s thought:
+  - text: 'Jason:
 
-      *I really appreciate these guys looking out for
-      me*'
+      *I really appreciate these guys looking out for me*'
     options: []

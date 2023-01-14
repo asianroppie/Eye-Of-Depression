@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: 6.1 Response
   m_EditorClassIdentifier: 
   data:
-  - text: "Female Co-worker:\nOh, you\u2019re buying Gloomie snacks?"
+  - text: "Lucy:\nOh, you\u2019re buying Jason snacks?"
     options: []
-  - text: "Normie:\nYeah, I think he has no time to eat considering how long he\u2019ll
+  - text: "Jason:\nYeah, I think he has no time to eat considering how long he\u2019ll
       be working on the task."
     options: []
-  - text: "Female Co-worker:\nI see, I\u2019ll buy him a drink then."
+  - text: "Lucy:\nI see, I\u2019ll buy him a drink then."
     options: []

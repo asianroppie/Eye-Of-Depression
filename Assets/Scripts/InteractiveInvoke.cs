@@ -68,6 +68,11 @@ public class InteractiveInvoke : Interactive
     {
         Singleton.events.fade_to_cafetaria.Invoke();
     }
+    public void ResponseSit()
+    {
+        Singleton.events.move_position.Invoke(-1.5f);
+        Destroy(this.gameObject);
+    }
     IEnumerator startBeforeText()
     {
         if (Singleton.runtime.onMonologue)

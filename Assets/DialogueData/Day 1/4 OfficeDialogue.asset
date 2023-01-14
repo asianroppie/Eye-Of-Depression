@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 4 OfficeDialogue
   m_EditorClassIdentifier: 
   data:
-  - text: "Gloomie's thought:\nI really need some break from this\u2026"
+  - text: "Jason:\n*I really need some break from this\u2026*"
     options:
     - option: '*Stay Silent*'
       next: {fileID: 0}

@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: 4.1 Response
   m_EditorClassIdentifier: 
   data:
-  - text: "Normie:\nHey, you want some help with that? I don\u2019t have much work
+  - text: "Alex:\nHey, you want some help with that? I don\u2019t have much work
       currently."
     options: []
-  - text: "Gloomie:\nIt\u2019s okay Normie, I got this. Thank you for offering."
+  - text: "Jason:\nIt\u2019s okay Alex, I got this. Thank you for offering."
     options: []
-  - text: 'Normie:
+  - text: 'Alex:
 
       Alright, but hey if you need some help let me know.'
     options: []
-  - text: 'Gloomie:
+  - text: 'Jason:
 
       Will do, Thank you.'
     options: []

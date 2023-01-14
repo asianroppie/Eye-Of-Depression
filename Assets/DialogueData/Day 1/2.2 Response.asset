@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 2.2 Response
   m_EditorClassIdentifier: 
   data:
-  - text: "Normie:\nHey, stop being so harsh. He\u2019s been working overtime lately.
+  - text: "Alex:\nHey, stop being so harsh. He\u2019s been working overtime lately.
       Cut him some slack."
     options: []
-  - text: "Gloomie:\nI\u2019m sorry, I\u2019ll try not to be late again."
+  - text: "Jason:\nI\u2019m sorry, I\u2019ll try not to be late again."
     options: []
-  - text: 'Co-worker:
+  - text: 'David:
 
       Whatever.'
     options: []

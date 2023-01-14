@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: 6 OfficeDialogue
   m_EditorClassIdentifier: 
   data:
-  - text: 'Normie''s thought:
+  - text: 'Alex:
 
-      *I should probably get him something.*'
+      *I should probably get Jason something.*'
     options:
-    - option: '*Buy Gloomie snacks'
+    - option: '*Buy Jason snacks*'
       next: {fileID: 11400000, guid: f09821d9964113d44972849628321395, type: 2}
       points: 1
-    - option: '*Don''t buy Gloomie snacks*'
+    - option: '*Don''t buy Jason snacks*'
       next: {fileID: 0}
       points: 0

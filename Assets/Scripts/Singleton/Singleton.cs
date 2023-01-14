@@ -38,7 +38,6 @@ public class Singleton : MonoBehaviour
         events.change_character = new UnityEvent();
         events.change_normie_work = new UnityEvent();
         events.play_cutscene = new UnityEvent();
-        events.test_pick = new UnityEvent();
         events.flip_player = new UnityEvent();
         events.train_monologue = new UnityEvent();
         events.bedroom_monologue = new UnityEvent();
@@ -66,7 +65,6 @@ public struct GameEvents
     public UnityEvent change_character;
     public UnityEvent change_normie_work;
     public UnityEvent play_cutscene;
-    public UnityEvent test_pick;
     public UnityEvent flip_player;
     public UnityEvent train_monologue;
     public UnityEvent bedroom_monologue;

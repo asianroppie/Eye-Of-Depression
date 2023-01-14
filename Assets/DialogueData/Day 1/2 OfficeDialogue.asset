@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: 2 OfficeDialogue
   m_EditorClassIdentifier: 
   data:
-  - text: 'Co-worker:
+  - text: 'David:
 
-      Oh look, it''s Gloomie. You''re late again, not a surprise.'
+      Oh look, it''s Jason. You''re late again, not a surprise.'
     options:
     - option: '*Stay silent*'
       next: {fileID: 11400000, guid: a5e31dd73db79244f99989e7128a9025, type: 2}

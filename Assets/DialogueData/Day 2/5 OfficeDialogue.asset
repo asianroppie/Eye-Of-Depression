@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
+  m_Name: 5 OfficeDialogue
+  m_EditorClassIdentifier: 
+  data:
+  - text: "Jason:\nYeah, it\u2019s just life has been kicking me down and it\u2019s
+      hard for me to get back up again."
+    options:
+    - option: '*Encourage Jason*'
+      next: {fileID: 11400000, guid: 819fe758adf89804c9d2b5af5c5896d0, type: 2}
+      points: 0
+    - option: '*Tell him to toughen up*'
+      next: {fileID: 11400000, guid: 32e2f5a630def414dbe00ed8ac85dd3c, type: 2}
+      points: 0

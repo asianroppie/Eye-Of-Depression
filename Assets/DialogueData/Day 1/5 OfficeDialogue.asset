@@ -13,23 +13,23 @@ MonoBehaviour:
   m_Name: 5 OfficeDialogue
   m_EditorClassIdentifier: 
   data:
-  - text: 'Normie:
+  - text: 'Alex:
 
       Finally, time for lunch.'
     options: []
-  - text: 'Female Co-worker:
+  - text: 'Lucy:
 
-      Hey Normie, want to grab a bite together?'
+      Hey Alex, want to grab a bite together?'
     options: []
-  - text: 'Normie:
+  - text: 'Alex:
 
-      Sure thing, Gloomie you want to join in?'
+      Sure thing, Jason you want to join in?'
     options: []
-  - text: 'Gloomie:
+  - text: 'Jason:
 
-      No thanks, Normie, I still have a lot to do.'
+      No thanks Alex, I still have a lot to do.'
     options: []
-  - text: "Female Co-worker:\nYou\u2019re not hungry, Gloomie?"
+  - text: "Lucy:\nYou\u2019re not hungry, Jason?"
     options: []
-  - text: "Gloomie:\nI\u2019m okay, I\u2019ll get something to eat later."
+  - text: "Jason:\nI\u2019m okay, I\u2019ll get something to eat later."
     options: []

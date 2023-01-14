@@ -13,7 +13,7 @@ public class DialogueSO : ScriptableObject
 
 [Serializable]
 public struct DialogueData {
-    [TextArea] public string text;
+    [TextArea(4,15)] public string text;
     public DialogueOption[] options;
 }
 

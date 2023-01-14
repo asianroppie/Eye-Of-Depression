@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: 2.2.1 Response
   m_EditorClassIdentifier: 
   data:
-  - text: 'Gloomie:
+  - text: 'Jason:
 
       Thank you for defending me, I appreciate it.'
     options: []
-  - text: 'Normie:
+  - text: 'Alex:
 
       No problem, I know how tiring working overtime can be.'
     options: []
-  - text: "Gloomie:\n*Huh\u2026 someone stood up for me\u2026*"
+  - text: "Jason:\n*Huh\u2026 someone stood up for me\u2026*"
     options: []

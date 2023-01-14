@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -94,6 +95,7 @@ public class Player : MonoBehaviour
             animator.SetLayerWeight(0, 0);
             animator.SetLayerWeight(2, 0);
             animator.SetLayerWeight(3, 0);
+            animator.SetLayerWeight(4, 0);
             animator.SetLayerWeight(1, 1);
         }
         if(Singleton.runtime.gloomie)
@@ -101,8 +103,10 @@ public class Player : MonoBehaviour
             animator.SetLayerWeight(0, 0);
             animator.SetLayerWeight(2, 0);
             animator.SetLayerWeight(1, 0);
+            animator.SetLayerWeight(4, 0);
             animator.SetLayerWeight(3, 1);
         }
+        this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, -2.45f);
     }
     public void ChangeCharacter()
     {
@@ -111,6 +115,7 @@ public class Player : MonoBehaviour
             animator.SetLayerWeight(1, 0);
             animator.SetLayerWeight(2, 0);
             animator.SetLayerWeight(3, 0);
+            animator.SetLayerWeight(4, 0);
             animator.SetLayerWeight(0, 1);
         }
         if (Singleton.runtime.gloomie)
@@ -118,8 +123,19 @@ public class Player : MonoBehaviour
             animator.SetLayerWeight(0, 0);
             animator.SetLayerWeight(1, 0);
             animator.SetLayerWeight(3, 0);
+            animator.SetLayerWeight(4, 0);
             animator.SetLayerWeight(2, 1);
+            this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, -2.45f);
         }
+    }
+    public void ChangeSit()
+    {
+        this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, -1.5f);
+        animator.SetLayerWeight(0, 0);
+        animator.SetLayerWeight(1, 0);
+        animator.SetLayerWeight(2, 0);
+        animator.SetLayerWeight(3, 0);
+        animator.SetLayerWeight(4, 1);
     }
     public void ChangeState()
     {

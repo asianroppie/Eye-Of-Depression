@@ -94,6 +94,7 @@ public class Fade : MonoBehaviour
     public void FadeToOffice()
     {
         Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutOffice");
     }
     public void OnFadeOfficeComplete()
     {
@@ -128,7 +129,8 @@ public class Fade : MonoBehaviour
         Singleton.runtime.UnFreeze();
         background1.SetActive(false);
         background2.SetActive(true);
-        Singleton.events.move_position.Invoke(-6f);
+        Singleton.events.move_position.Invoke(7.5f);
+        Singleton.events.flip_player.Invoke();
         secondSceneAction.Invoke();
     }
 }

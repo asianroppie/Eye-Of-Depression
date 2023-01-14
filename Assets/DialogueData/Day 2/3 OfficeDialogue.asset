@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
+  m_Name: 3 OfficeDialogue
+  m_EditorClassIdentifier: 
+  data:
+  - text: 'Alex:
+
+      Hey Jason.'
+    options: []
+  - text: 'Jason:
+
+      Oh, hey Alex !'
+    options: []
+  - text: 'Alex:
+
+      Hey I''ve noticed that you seem more off today. What''s wrong?'
+    options: []
+  - text: "Jason:\n*Maybe I can vent to him\u2026*"
+    options: []
+  - text: "Jason:\nTo be honest Alex, I haven\u2019t been doing good."
+    options: []
+  - text: 'Alex:
+
+      Would you like to talk about it?'
+    options: []
+  - text: 'Jason:
+
+      Everything has just been really draining me.'
+    options:
+    - option: '*Stays silent*'
+      next: {fileID: 11400000, guid: 19f507a8030fd44429643aa004b9fe32, type: 2}
+      points: 1
+    - option: '*Starts venting too*'
+      next: {fileID: 11400000, guid: d0f17c453ca4fb242bc3cad570203006, type: 2}
+      points: 0

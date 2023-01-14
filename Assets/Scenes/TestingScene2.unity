@@ -896,7 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactIcon: {fileID: 1354803424}
-  dialogue: {fileID: 11400000, guid: b76ea27ff2b44694db924473331be8f5, type: 2}
+  dialogue: {fileID: 11400000, guid: a9728bef093189b408f40b6026cdfebe, type: 2}
   callback:
     m_PersistentCalls:
       m_Calls: []

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: 2.1.1 Response
   m_EditorClassIdentifier: 
   data:
-  - text: 'Normie''s thought:
+  - text: 'Alex:
 
       *I feel bad for him*'
     options: []
-  - text: 'Gloomie''s thought:
+  - text: 'Jason:
 
-      *You''re such a failure Gloomie*'
+      *You''re such a failure Jason*'
     options: []

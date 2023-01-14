@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1 OfficeDialogue
   m_EditorClassIdentifier: 
   data:
-  - text: "Co-worker:\nHey Normie, you\u2019re late today. Traffic jams?"
+  - text: "David:\nHey Alex, you\u2019re late today. Traffic jams?"
     options: []
-  - text: "Normie:\nYeah, it\u2019s insane like usual.\r"
+  - text: "Alex:\nYeah, it\u2019s insane like usual.\r"
     options: []

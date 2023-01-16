@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: 2 OfficeDialogue
   m_EditorClassIdentifier: 
   data:
-  - text: "Alex:\n*Finally it\u2019s lunch time*"
+  - text: 'Alex:
+
+      *Akhirnya jam makan siang*'
     options: []
   - text: 'Alex:
 
-      *Jason left earlier, a bit unusual for him*'
+      *Jason keluar terlebih dahulu, agak tidak biasa untuknya*'
     options: []
-  - text: "Alex:\n*Well, I\u2019m going to head up to the breakroom for a bit*"
+  - text: 'Alex:
+
+      *Ya sudah lah, aku akan ke ruang istirahat terlebih dahulu*'
     options: []

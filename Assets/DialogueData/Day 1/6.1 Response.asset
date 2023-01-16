@@ -13,10 +13,16 @@ MonoBehaviour:
   m_Name: 6.1 Response
   m_EditorClassIdentifier: 
   data:
-  - text: "Lucy:\nOh, you\u2019re buying Jason snacks?"
+  - text: 'Lucy:
+
+      Oh, kamu membelikan cemilan untuk Jason?'
     options: []
-  - text: "Jason:\nYeah, I think he has no time to eat considering how long he\u2019ll
-      be working on the task."
+  - text: 'Jason:
+
+      Iya, sepertinya dia tidak mempunyai waktu itu membeli makanan
+      nantinya.'
     options: []
-  - text: "Lucy:\nI see, I\u2019ll buy him a drink then."
+  - text: 'Lucy:
+
+      Kalau begitu aku akan belikan dia minuman deh.'
     options: []

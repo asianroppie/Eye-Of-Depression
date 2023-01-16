@@ -13,26 +13,24 @@ MonoBehaviour:
   m_Name: 6.1.1 Response
   m_EditorClassIdentifier: 
   data:
-  - text: 'Alex:
-
-      Hey Jason, we know you probably have no time to buy any so
-      we got you snacks and a drink'
+  - text: "Alex:\nHei Jason, kami tau kamu tidak ada waktu untuk beli makanan nanti,
+      jadi aku dan Lucy membelikan kamu cemilan dan minuman.\r"
     options: []
-  - text: "Jason:\nThat\u2019s very considerate of you guys, thank you so much!"
+  - text: 'Jason:
+
+      Kalian sangat perhatian sekali, Terima kasih!'
     options: []
   - text: 'Lucy:
 
-      No problem Jason, hey good luck on those tasks!'
+      Sama-sama Jason, semangat dengan pekerjaanmu ya!'
     options: []
   - text: 'Jason:
 
-      Thank you Lucy. Enjoy your lunch guys'
+      Terima kasih, Lucy. Selamat makan!'
     options: []
-  - text: 'Alex & Lucy:
-
-      Thank you!'
+  - text: "Alex & Lucy:\nTerima Kasih!\r"
     options: []
   - text: 'Jason:
 
-      *I really appreciate these guys looking out for me*'
+      *Aku sangat menghargai mereka yang memperhatikan aku*'
     options: []

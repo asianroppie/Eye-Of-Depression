@@ -15,14 +15,18 @@ MonoBehaviour:
   data:
   - text: 'Alex:
 
-      Just stand back up, what''s so hard? You should toughen up.'
+      Ya bangkitlah kembali, apa sulitnya? Kamu harus tegar Jason.'
     options: []
-  - text: "Alex:\nMan up, You\u2019re a man aren\u2019t you?"
+  - text: "Alex:\nKamu laki-laki bukan?\r"
     options: []
-  - text: "Jason:\n*Maybe i shouldn\u2019t have vented to him*"
+  - text: 'Jason:
+
+      *Mungkin sebaiknya aku tidak curhat ke Alex*'
     options: []
-  - text: "Alex:\nOh i have to go get my lunch real quick, it\u2019s been nice talking
-      to you Jason, but i\u2019m going to get my lunch now, talk to you later?"
+  - text: 'Alex:
+
+      Oh aku ingin membeli makanan siang dulu, senang berbicara
+      denganmu Jason, nanti kita berbincang lagi ya.'
     options: []
-  - text: "Jason:\nYeah\u2026 talk to you later Alex."
+  - text: "Jason:\nIya\u2026 hati-hati di jalan Alex."
     options: []

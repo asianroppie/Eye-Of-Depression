@@ -13,17 +13,21 @@ MonoBehaviour:
   m_Name: 4.2 Response
   m_EditorClassIdentifier: 
   data:
-  - text: "Alex:\nIt\u2019s probably nothing too serious, you\u2019ll get over it
-      soon. You\u2019re just burned out."
+  - text: 'Alex:
+
+      Ini mungkin hal yang tidak terlalu serius, kamu akan segera
+      mengatasinya. Mungkin kamu hanya kelelahan.'
     options: []
-  - text: "Jason:\n*You don\u2019t get it\u2026*"
+  - text: "Jason:\n*Kamu tidak mengerti\u2026*"
     options: []
   - text: 'Jason:
 
-      Yeah, possibly.'
+      Iya, mungkin.'
     options: []
-  - text: "Alex:\nWhat else that\u2019s been bothering you?"
+  - text: 'Alex:
+
+      Selain itu, apalagi yang mengganggu pikiranmu?'
     options:
-    - option: '*Continue*'
+    - option: '*Lanjut*'
       next: {fileID: 11400000, guid: b87314d60b1d5be4084f006bcf8168b7, type: 2}
       points: 0

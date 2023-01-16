@@ -15,31 +15,34 @@ MonoBehaviour:
   data:
   - text: 'Alex:
 
-      Hey Jason.'
+      Hei Jason.'
     options: []
   - text: 'Jason:
 
-      Oh, hey Alex !'
+      Oh, hei Alex.'
     options: []
   - text: 'Alex:
 
-      Hey I''ve noticed that you seem more off today. What''s wrong?'
+      Jason sepertinya kamu terlihat sedih hari ini, apakah semuanya
+      baik-baik saja?'
     options: []
-  - text: "Jason:\n*Maybe I can vent to him\u2026*"
-    options: []
-  - text: "Jason:\nTo be honest Alex, I haven\u2019t been doing good."
-    options: []
-  - text: 'Alex:
-
-      Would you like to talk about it?'
+  - text: "Jason:\n*Mungkin aku bisa curhat dengannya\u2026*"
     options: []
   - text: 'Jason:
 
-      Everything has just been really draining me.'
+      Sejujurnya Alex, aku sedang tidak baik-baik saja.'
+    options: []
+  - text: 'Alex:
+
+      Apakah kamu ingin membicarakannya?'
+    options: []
+  - text: 'Jason:
+
+      Aku rasa semuanya benar-benar menguras tenagaku.'
     options:
-    - option: '*Stays silent*'
+    - option: '*Diam saja*'
       next: {fileID: 11400000, guid: 19f507a8030fd44429643aa004b9fe32, type: 2}
       points: 1
-    - option: '*Starts venting too*'
+    - option: '*Ikut curhat*'
       next: {fileID: 11400000, guid: d0f17c453ca4fb242bc3cad570203006, type: 2}
       points: 0

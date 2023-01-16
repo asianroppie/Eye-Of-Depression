@@ -15,35 +15,43 @@ MonoBehaviour:
   data:
   - text: 'Alex:
 
-      Hey, I know life has been tough lately and everything seems
-      to be very draining for you.'
-    options: []
-  - text: "Alex:\nBut keep pushing Jason. Personally, I believe that there\u2019s
-      always a light at the end of the tunnel."
+      Hei, aku tahu akhir-akhir ini hidup terasa sulit dan semuanya
+      tampak sangat menguras tenaga untukmu.'
     options: []
   - text: 'Alex:
 
-      And even if life has kicked you down, you can push through
-      it and stand back up.'
+      Tapi teruslah semangat Jason. Secara pribadi, aku percaya
+      bahwa selalu ada cahaya diujung terowongan.'
     options: []
   - text: 'Alex:
 
-      You can take as much time to stand back up, go at your own
-      pace.'
+      Dan bahkan jika hidup telah menjatuhkan kamu. Jangan putus
+      asa dan berdiri kembali.'
     options: []
-  - text: "Alex:\nJust know when you\u2019re down, there are other people who care
-      about you and will be there for you when you need someone to listen or talk
-      to."
+  - text: 'Alex:
+
+      Kamu tidak harus terburu-buru untuk bangkit kembali, lakukanlah
+      sesuai dengan kemampuanmu Jason.'
     options: []
-  - text: "Jason:\n*Maybe he\u2019s right\u2026*"
+  - text: 'Alex:
+
+      Ketahuilah saat kamu sedang terjatuh, ada orang lain yang
+      peduli dengan kamu dan akan ada untuk kamu saat kamu membutuhkan seseorang
+      untuk didengarkan atau diajak bicara.'
+    options: []
+  - text: "Jason:\n*Mungkin dia benar\u2026*"
     options: []
   - text: 'Jason:
 
-      Thank you Alex, I really needed that. I appreciate you for
-      taking your time to talk to me.'
+      Terima kasih Alex, aku sangat membutuhkan itu. Saya menghargai
+      kamu yang sudah meluangkan waktu untuk berbicara denganku.'
     options: []
-  - text: "Alex:\nNo problem Jason, I\u2019m here for you if you ever want to vent
-      or just talk."
+  - text: 'Alex:
+
+      Tidak masalah, Jason. Jika kamu ingin curhat lagi atau hanya
+      berbicara jangan segan-segan beri tahu diriku ya.'
     options: []
-  - text: "Jason:\nThank you, Alex\u2026 Thank you."
+  - text: 'Jason:
+
+      Terima kasih, Alex.'
     options: []

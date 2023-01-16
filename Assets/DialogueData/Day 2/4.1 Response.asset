@@ -13,16 +13,22 @@ MonoBehaviour:
   m_Name: 4.1 Response
   m_EditorClassIdentifier: 
   data:
-  - text: "Alex:\nI\u2019m sorry that you\u2019ve been feeling this way."
+  - text: 'Alex:
+
+      Aku turut sedih kamu merasa seperti ini.'
     options: []
-  - text: "Alex:\nIt must\u2019ve been exhausting being stuck in this loop."
+  - text: 'Alex:
+
+      Pasti melelahkan terjebak dalam lingkaran ini.'
     options: []
-  - text: "Jason:\nIt is\u2026"
+  - text: "Jason:\nBenar\u2026"
     options: []
-  - text: "Jason:\n*It is extremely exhausting\u2026*"
+  - text: "Jason:\n*Sangat melelahkan\u2026*"
     options: []
-  - text: "Alex:\nWhat else that\u2019s been bothering you?"
+  - text: 'Alex:
+
+      Selain itu, apalagi yang mengganggu pikiranmu?'
     options:
-    - option: '*Continue*'
+    - option: '*Lanjut*'
       next: {fileID: 11400000, guid: b87314d60b1d5be4084f006bcf8168b7, type: 2}
       points: 0

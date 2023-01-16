@@ -15,11 +15,11 @@ MonoBehaviour:
   data:
   - text: 'Jason:
 
-      Thank you for defending me, I appreciate it.'
+      Terima kasih sudah membelaku, aku menghargai itu.'
     options: []
   - text: 'Alex:
 
-      No problem, I know how tiring working overtime can be.'
+      Sama-sama, aku tahu kerja lembur bisa sangat melelahkan.'
     options: []
-  - text: "Jason:\n*Huh\u2026 someone stood up for me\u2026*"
+  - text: "Jason:\n*Huh\u2026 ada orang yang membelaku\u2026*"
     options: []

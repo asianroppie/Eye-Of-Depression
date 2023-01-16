@@ -15,21 +15,23 @@ MonoBehaviour:
   data:
   - text: 'Alex:
 
-      Finally, time for lunch.'
+      Akhirnya, waktunya makan siang.'
     options: []
   - text: 'Lucy:
 
-      Hey Alex, want to grab a bite together?'
+      Hei Alex, beli makan bareng yuk.'
     options: []
-  - text: 'Alex:
-
-      Sure thing, Jason you want to join in?'
+  - text: "Alex:\nAyo, Jason maukah kamu bergabung?\r"
     options: []
   - text: 'Jason:
 
-      No thanks Alex, I still have a lot to do.'
+      Tidak terima kasih Alex, aku masih ada kerjaan.'
     options: []
-  - text: "Lucy:\nYou\u2019re not hungry, Jason?"
+  - text: 'Lucy:
+
+      Kamu tidak lapar Jason?'
     options: []
-  - text: "Jason:\nI\u2019m okay, I\u2019ll get something to eat later."
+  - text: 'Jason:
+
+      Tidak apa-apa, aku akan makan nanti.'
     options: []

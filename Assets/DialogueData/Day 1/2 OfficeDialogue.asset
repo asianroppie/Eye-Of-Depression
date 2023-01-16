@@ -15,11 +15,12 @@ MonoBehaviour:
   data:
   - text: 'David:
 
-      Oh look, it''s Jason. You''re late again, not a surprise.'
+      Oh lihat lah, si Jason baru datang. Kamu telat lagi seperti
+      biasanya.'
     options:
-    - option: '*Stay silent*'
+    - option: '*Diam saja*'
       next: {fileID: 11400000, guid: a5e31dd73db79244f99989e7128a9025, type: 2}
       points: 0
-    - option: '*Defend Gloomie*'
+    - option: '*Bela Jason*'
       next: {fileID: 11400000, guid: a33c2c5c8b0a25947848c3d4935527bf, type: 2}
       points: 1

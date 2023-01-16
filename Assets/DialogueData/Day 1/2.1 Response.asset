@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: 2.1 Response
   m_EditorClassIdentifier: 
   data:
-  - text: "Jason:\nI\u2019m sorry, I\u2019ll try not to be late again."
+  - text: 'Jason:
+
+      Maaf, aku akan coba agar tidak telat lagi.'
     options: []
   - text: 'Alex:
 
-      Whatever.'
+      Ya sudah lah.'
     options: []

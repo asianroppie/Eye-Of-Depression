@@ -15,8 +15,8 @@ MonoBehaviour:
   data:
   - text: 'Boss:
 
-      Hey Jason, I have another extra work that you must do. Be
-      sure to get these files ready by tonight.'
+      Hei Jason, aku punya berkas ekstra yang harus kamu kerjakan.
+      Pastikan berkas tersebut sudah siap malam ini ya.'
     options: []
-  - text: "Gloomie:\n\u2026 Okay boss."
+  - text: "Gloomie:\n\u2026 Oke bos."
     options: []

@@ -13,16 +13,19 @@ MonoBehaviour:
   m_Name: 4 OfficeDialogue
   m_EditorClassIdentifier: 
   data:
-  - text: "Jason:\nI haven\u2019t really enjoyed my life, all I do is work and go
-      home and this continuous cycle is messing me up mentally."
+  - text: 'Jason:
+
+      Aku benar-benar tidak menikmati hidupku, yang aku lakukan
+      hanyalah bekerja dan pulang ke rumah dan siklus yang terus menerus ini mengacaukan
+      mentalku.'
     options: []
   - text: 'Jason:
 
-      And doing activities that I like are not even fun anymore.'
+      Dan kegiatan yang aku suka sudah tidak merasa asik lagi.'
     options:
-    - option: '*Empathetic*'
+    - option: '*Empatik*'
       next: {fileID: 11400000, guid: 951d1eab8f3f4954ab0e6316d6c32864, type: 2}
       points: 1
-    - option: '*Dismissive*'
+    - option: '*Meremehkan*'
       next: {fileID: 11400000, guid: 58e4e02e43d179045b032d2964b8242a, type: 2}
       points: 0

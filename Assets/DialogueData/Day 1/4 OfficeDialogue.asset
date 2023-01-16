@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: 4 OfficeDialogue
   m_EditorClassIdentifier: 
   data:
-  - text: "Jason:\n*I really need some break from this\u2026*"
+  - text: "Jason:\n*Aku benar-benar butuh rehat dari semua ini\u2026*"
     options:
-    - option: '*Stay Silent*'
+    - option: '*Diam saja*'
       next: {fileID: 0}
       points: 0
-    - option: '*Offer help*'
+    - option: '*Menawarkan bantuan*'
       next: {fileID: 11400000, guid: 2e5bbde050d533142b1ecf96f1bc4095, type: 2}
       points: 1

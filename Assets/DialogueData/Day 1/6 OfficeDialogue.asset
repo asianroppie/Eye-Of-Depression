@@ -15,11 +15,11 @@ MonoBehaviour:
   data:
   - text: 'Alex:
 
-      *I should probably get Jason something.*'
+      *Aku sebaiknya belikan sesuatu untuk Jason*'
     options:
-    - option: '*Buy Jason snacks*'
+    - option: '*Belikan Jason cemilan*'
       next: {fileID: 11400000, guid: f09821d9964113d44972849628321395, type: 2}
       points: 1
-    - option: '*Don''t buy Jason snacks*'
+    - option: '*Tidak belikan Jason cemilan*'
       next: {fileID: 0}
       points: 0

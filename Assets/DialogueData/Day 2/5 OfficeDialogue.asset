@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: 5 OfficeDialogue
   m_EditorClassIdentifier: 
   data:
-  - text: "Jason:\nYeah, it\u2019s just life has been kicking me down and it\u2019s
-      hard for me to get back up again."
+  - text: 'Jason:
+
+      Ya, hanya saja hidup telah menjatuhkan diriku dan sulit
+      bagiku untuk bangkit kembali.'
     options:
-    - option: '*Encourage Jason*'
+    - option: '*Memberi semangat Jason*'
       next: {fileID: 11400000, guid: 819fe758adf89804c9d2b5af5c5896d0, type: 2}
       points: 0
-    - option: '*Tell him to toughen up*'
+    - option: '*Katakan kepada Jason untuk menguatkan diri*'
       next: {fileID: 11400000, guid: 32e2f5a630def414dbe00ed8ac85dd3c, type: 2}
       points: 0

@@ -15,26 +15,28 @@ MonoBehaviour:
   data:
   - text: 'Alex:
 
-      Morning Jason.'
+      Selamat pagi, Jason.'
     options: []
   - text: 'Jason:
 
-      Oh, Morning Alex!'
+      Oh, Selamat pagi Alex!'
     options: []
   - text: 'Alex:
 
-      *He looks a bit off today*'
-    options: []
-  - text: "Alex:\nHow\u2019ve you been doing?"
-    options: []
-  - text: "Jason:\nI\u2019ve been doing okay, how about you?"
+      *Dia terlihat agak berbeda*'
     options: []
   - text: 'Alex:
 
-      Been doing good, hey it looks like you have a lot of work
-      for today huh? Good luck with your work Jason.'
+      Bagaimana kabarmu?'
+    options: []
+  - text: "Jason:\nAku baik-baik saja, kalau kamu?\r"
+    options: []
+  - text: 'Alex:
+
+      Baik-baik saja juga, hei sepertinya kamu mempunyai banyak
+      kerjaan, semangat dengan pekerjaan kamu Jason!'
     options: []
   - text: 'Jason:
 
-      Thank you Alex, I appreciate it.'
+      Terima kasih, Alex.'
     options: []

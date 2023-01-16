@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: 1 OfficeDialogue
   m_EditorClassIdentifier: 
   data:
-  - text: "David:\nHey Alex, you\u2019re late today. Traffic jams?"
+  - text: 'David:
+
+      Hai Alex, Tumben telat hari ini, terjebak macet kah?'
     options: []
-  - text: "Alex:\nYeah, it\u2019s insane like usual.\r"
+  - text: 'Alex:
+
+      Iya, sangat macet hari ini.'
     options: []

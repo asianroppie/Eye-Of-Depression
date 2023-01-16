@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: 2.2 Response
   m_EditorClassIdentifier: 
   data:
-  - text: "Alex:\nHey, stop being so harsh. He\u2019s been working overtime lately.
-      Cut him some slack."
+  - text: "Alex:\nSudah lah jangan terlalu kasar, dia sudah sering bekerja lembur
+      belakangan ini, \t"
     options: []
-  - text: "Jason:\nI\u2019m sorry, I\u2019ll try not to be late again."
+  - text: 'Jason:
+
+      Maaf, aku akan coba agar tidak telat lagi.'
     options: []
   - text: 'David:
 
-      Whatever.'
+      Ya sudah lah.'
     options: []

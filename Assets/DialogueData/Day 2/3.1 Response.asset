@@ -15,12 +15,14 @@ MonoBehaviour:
   data:
   - text: 'Alex:
 
-      Me too, oh my god work has been so tough lately like I can
-      barely have any sleep.'
+      Aku juga! Ya Tuhan, belakangan ini pekerjaan banyak sekali
+      sampai aku tidak ada waktu itu tidur pulas.'
     options: []
-  - text: "Alex:\nAnd you know what? David has been slacking off lately, the boss
-      knew about it and he decided to not do anything because he\u2019s the son of
-      the CEO."
+  - text: 'Alex:
+
+      Dan kamu tahu apa? David belakangan ini sangat malas. Boss
+      sudah mengetahui sifatnya tetapi dia tidak melakukan apa-apa karena David adalah
+      anak dari CEO perusahaan ini.'
     options: []
   - text: 'Jason:
 
@@ -28,7 +30,7 @@ MonoBehaviour:
     options: []
   - text: 'Alex:
 
-      Lucky him honestly, anyway go on.'
+      David sangat beruntung, oh iya silahkan lanjut.'
     options:
     - option: '*Continue*'
       next: {fileID: 11400000, guid: 19f507a8030fd44429643aa004b9fe32, type: 2}

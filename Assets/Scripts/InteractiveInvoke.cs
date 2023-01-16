@@ -71,6 +71,7 @@ public class InteractiveInvoke : Interactive
     public void ResponseSit()
     {
         Singleton.events.move_position.Invoke(-1.5f);
+        Singleton.events.change_sit.Invoke();
         Destroy(this.gameObject);
     }
     IEnumerator startBeforeText()

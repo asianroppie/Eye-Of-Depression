@@ -190,10 +190,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 45457229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e56e6e399a424b4479b7b39edd7f9445, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a79c19bc56012446b955bcf9916b488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   director: {fileID: 45457230}
+  firstAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 45457232}
+        m_TargetAssemblyTypeName: OfficeDirector, Assembly-CSharp
+        m_MethodName: Day2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &93133139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -973,9 +988,9 @@ MonoBehaviour:
   callback:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 299916601}
-        m_TargetAssemblyTypeName: Fade, Assembly-CSharp
-        m_MethodName: FadeToScene
+      - m_Target: {fileID: 2081240094}
+        m_TargetAssemblyTypeName: TestScore, Assembly-CSharp
+        m_MethodName: PrintScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -985,9 +1000,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 607859357}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: ChangeOutfit
+      - m_Target: {fileID: 299916601}
+        m_TargetAssemblyTypeName: Fade, Assembly-CSharp
+        m_MethodName: FadeToScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1771,17 +1786,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af55ede4f8a5a94b88efd11b76fc5ac, type: 3}
---- !u!114 &607859357 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2998448890141461038, guid: 5af55ede4f8a5a94b88efd11b76fc5ac, type: 3}
-  m_PrefabInstance: {fileID: 607859356}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46aa4ea28b996ea408b70d6cabcd4fa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &655448394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2754,18 +2758,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 607859357}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: ChangeSit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 425536888}
         m_TargetAssemblyTypeName: InteractiveDialogue, Assembly-CSharp
         m_MethodName: Interact
@@ -3167,6 +3159,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5412409724239441322, guid: 35ad708a1d20dc943bcf0dd38f99eafb, type: 3}
   m_PrefabInstance: {fileID: 1968068146}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2081240093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2081240095}
+  - component: {fileID: 2081240094}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2081240094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081240093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a683449d75a0845b49996f9dd3864b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2081240095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081240093}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.43847668, y: 0.75352335, z: 0.061061658}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2117260969
 GameObject:
   m_ObjectHideFlags: 0

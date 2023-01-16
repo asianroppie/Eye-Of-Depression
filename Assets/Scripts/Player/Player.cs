@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
         Singleton.events.change_character.AddListener(ChangeCharacter);
         Singleton.events.flip_player.AddListener(Flip);
         Singleton.events.change_state.AddListener(ChangeState);
+        Singleton.events.change_sit.AddListener(ChangeSit);
+        Singleton.events.change_height.AddListener(ChangeHeight);
     }
 
 
@@ -106,7 +108,6 @@ public class Player : MonoBehaviour
             animator.SetLayerWeight(4, 0);
             animator.SetLayerWeight(3, 1);
         }
-        this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, -2.45f);
     }
     public void ChangeCharacter()
     {
@@ -125,7 +126,6 @@ public class Player : MonoBehaviour
             animator.SetLayerWeight(3, 0);
             animator.SetLayerWeight(4, 0);
             animator.SetLayerWeight(2, 1);
-            this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, -2.45f);
         }
     }
     public void ChangeSit()
@@ -140,6 +140,10 @@ public class Player : MonoBehaviour
     public void ChangeState()
     {
         animator.SetFloat("Speed", 0);
+    }
+    public void ChangeHeight()
+    {
+        this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, -2.45f);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

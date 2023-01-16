@@ -21,10 +21,19 @@ public class Fade : MonoBehaviour
         Singleton.events.fade_to_cafetaria.AddListener(FadeToCafetaria);
         Singleton.events.fade_to_office.AddListener(FadeToOffice);
     }
+    /*public void Freeze()
+    {
+        Singleton.runtime.Freeze();
+    }
+    public void Unfreeze()
+    {
+        Singleton.runtime.UnFreeze();
+    }*/
     public void FadeToScene()
     {
-        animator.SetTrigger("FadeOut");
         Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOut");
+        Singleton.events.change_height.Invoke();
     }
     public void OnFadeComplete()
     {
@@ -36,6 +45,7 @@ public class Fade : MonoBehaviour
     }
     public void FadeToLevel()
     {
+        Singleton.runtime.Freeze();
         animator.SetTrigger("FadeOutLevel");
     }
     public void OnFadeLevelComplete()
@@ -51,6 +61,7 @@ public class Fade : MonoBehaviour
             Singleton.events.change_outfit.Invoke();
         }
         animator.SetTrigger("FadeIn");
+        Singleton.runtime.UnFreeze();
     }
     public void FadeToWork()
     {
@@ -131,6 +142,21 @@ public class Fade : MonoBehaviour
         background2.SetActive(true);
         Singleton.events.move_position.Invoke(7.5f);
         Singleton.events.flip_player.Invoke();
+        secondSceneAction.Invoke();
+    }
+    public void FadeToBreakroom2()
+    {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutBreakroom2");
+    }
+    public void OnFadeBreakroom2Complete()
+    {
+        animator.SetTrigger("FadeIn");
+        Singleton.runtime.UnFreeze();
+        background1.SetActive(false);
+        background2.SetActive(true);
+        Singleton.events.move_position.Invoke(-3.75f);
+        Singleton.events.change_sit.Invoke();
         secondSceneAction.Invoke();
     }
 }

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
+  m_Name: 5.1 Response
+  m_EditorClassIdentifier: 
+  data:
+  - text: 'Alex:
+
+      Aku tahu ini akan sulit bagimu, kehilangan motivasi untuk
+      menjadi lebih baik terdengar sulit dan aku turut sedih kamu harus mengalami
+      perasaan itu.'
+    options: []
+  - text: 'Jason:
+
+      Terima kasih Alex.'
+    options: []
+  - text: 'Alex:
+
+      Tapi, ambil saja langkah demi langkah dan aku yakin kamu
+      pada akhirnya akan melihat kemajuan.'
+    options: []
+  - text: "Jason:\nAku juga berharap seperti itu\r."
+    options:
+    - option: '*Lanjut*'
+      next: {fileID: 11400000, guid: 42c6f43bc90b2504b9c3c73cb87e0504, type: 2}
+      points: 0

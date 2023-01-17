@@ -47,6 +47,7 @@ public class Singleton : MonoBehaviour
         events.fade_to_office = new UnityEvent();
         events.change_sit = new UnityEvent();
         events.change_height = new UnityEvent();
+        events.change_day = new UnityEvent();
 
         DontDestroyOnLoad(gameObject);
     }
@@ -76,6 +77,7 @@ public struct GameEvents
     public UnityEvent fade_to_office;
     public UnityEvent change_sit;
     public UnityEvent change_height;
+    public UnityEvent change_day;
 }
 
 

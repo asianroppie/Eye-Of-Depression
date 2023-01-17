@@ -29,6 +29,10 @@ public class Fade : MonoBehaviour
     {
         Singleton.runtime.UnFreeze();
     }*/
+    public void OnFadeInComplete()
+    {
+        Singleton.events.change_day.Invoke();
+    }
     public void FadeToScene()
     {
         Singleton.runtime.Freeze();

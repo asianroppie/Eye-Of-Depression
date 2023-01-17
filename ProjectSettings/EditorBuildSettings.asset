@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Gameplay/Day 1/1 Bedroom Scene.unity
+    path: Assets/Scenes/Gameplay/Day 1/1 Day 1.unity
     guid: f899c26a761256e42a380e748dd36af4
   - enabled: 1
     path: Assets/Scenes/Gameplay/Day 1/2 Gloomie Bedroom Scene.unity
@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Gameplay/Day 1/4 Office Scene.unity
     guid: cc4025c7d0565d847acc9fba584ad47f
   - enabled: 1
-    path: Assets/Scenes/Gameplay/Day 2/1 Bedroom Scene.unity
+    path: Assets/Scenes/Gameplay/Day 2/1 Day 2.unity
     guid: d471f16e5785b964fbe540e3aa3a3743
   - enabled: 1
     path: Assets/Scenes/Gameplay/Day 2/2 Gloomie Bedroom Scene.unity
@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Gameplay/Day 2/3 Office Scene.unity
     guid: 8831166b820f5244fb21d722fcd4062e
   - enabled: 1
-    path: Assets/Scenes/Gameplay/Day 3/1 Bedroom Scene.unity
+    path: Assets/Scenes/Gameplay/Day 3/1 Day 3.unity
     guid: d179005beed4faf449faf1257276b6a4
   - enabled: 1
     path: Assets/Scenes/Gameplay/Day 3/3 Office Scene.unity

@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class TestScore : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void PrintScore()
     {
-        Debug.Log(Singleton.runtime.totalScore);
+        Debug.Log(Singleton.runtime.sympathyScore);
+    }
+    public void IncrementAndPrintScore()
+    {
+        Singleton.runtime.sympathyScore += 1;
+        Debug.Log("Sympathy Score has been increased by 1");
+        Debug.Log("Sympathy Score has: " + Singleton.runtime.sympathyScore);
     }
 }

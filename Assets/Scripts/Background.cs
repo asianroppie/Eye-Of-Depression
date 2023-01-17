@@ -15,8 +15,6 @@ public class Background : MonoBehaviour
         width = col.size.x;
         rb.velocity = new Vector2(speed, 0);
     }
-
-    // Update is called once per frame
     void Update()
     {
         if(transform.position.x < -width)

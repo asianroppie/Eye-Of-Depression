@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
+  m_Name: 6.1 Response
+  m_EditorClassIdentifier: 
+  data:
+  - text: 'Alex:
+
+      Aku tidak percaya dengan hal seperti itu, hanya buang-buang
+      uang saja.'
+    options: []
+  - text: "Jason:\nOh\u2026"
+    options: []
+  - text: 'Alex:
+
+      Setahuku, kamu hanya curhat dengan seseorang, harus bayar
+      pula!'
+    options: []
+  - text: 'Alex:
+
+      Curhat itu gratis Jason, kamu tidak harus ke psikolog untuk
+      itu.'
+    options: []
+  - text: 'Jason:
+
+      Tetapi itu bukan hanya curhat kan...'
+    options: []
+  - text: 'Alex:
+
+      Ya apapun itu lah, tidak usah Jason. Lebih baik kamu bekerja
+      keras untuk jadi lebih baik, jangan malas malasan Jason. Tetapi ya terserah
+      kamu, itu adalah uang kamu.'
+    options: []
+  - text: "Jason:\nBaiklah\u2026"
+    options:
+    - option: '*Lanjut*'
+      next: {fileID: 11400000, guid: ed89f3ed7fb16c64ea509ca5903cb902, type: 2}
+      points: 0

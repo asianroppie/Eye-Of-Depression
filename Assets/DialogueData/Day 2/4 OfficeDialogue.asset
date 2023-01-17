@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
+  m_Name: 4 OfficeDialogue
+  m_EditorClassIdentifier: 
+  data:
+  - text: 'Jason:
+
+      Aku benar-benar tidak menikmati hidupku, yang aku lakukan
+      hanyalah bekerja dan pulang ke rumah dan siklus yang terus menerus ini mengacaukan
+      mentalku.'
+    options: []
+  - text: 'Jason:
+
+      Dan kegiatan yang aku suka sudah tidak merasa asik lagi.'
+    options:
+    - option: '*Empatik*'
+      next: {fileID: 11400000, guid: 951d1eab8f3f4954ab0e6316d6c32864, type: 2}
+      points: 1
+    - option: '*Meremehkan*'
+      next: {fileID: 11400000, guid: 58e4e02e43d179045b032d2964b8242a, type: 2}
+      points: 0

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
+  m_Name: 1 OfficeDialogue
+  m_EditorClassIdentifier: 
+  data:
+  - text: 'Alex:
+
+      Hei Jason, bagaimana kabarmu?'
+    options: []
+  - text: 'Jason:
+
+      Ya seperti biasa, bagaimana dengan dirimu?'
+    options: []
+  - text: 'Alex:
+
+      Sejujurnya, aku tidak mau kerja hari ini haha.'
+    options: []
+  - text: 'Jason:
+
+      Haha sama denganku dong Alex.'
+    options: []
+  - text: 'Alex:
+
+      Oh iya, bagaimana perasaanmu yang sebenarnya sekarang, masih
+      merasakan hal yang sama seperti kemarin?'
+    options: []
+  - text: "Jason:\nIya\u2026 masih merasakan hal yang sama."
+    options: []
+  - text: 'Alex:
+
+      Hei, kalau kamu ingin curhat kabari aku saja ya.'
+    options: []
+  - text: 'Jason:
+
+      Baiklah, terima kasih Alex.'
+    options: []
+  - text: 'Alex:
+
+      Oke, semangat dengan pekerjaanmu Jason.'
+    options: []
+  - text: 'Jason:
+
+      Kamu juga Alex.'
+    options: []

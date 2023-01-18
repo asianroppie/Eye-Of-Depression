@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
         Singleton.events.change_state.AddListener(ChangeState);
         Singleton.events.change_sit.AddListener(ChangeSit);
         Singleton.events.change_height.AddListener(ChangeHeight);
+        Singleton.events.change_sit_ending.AddListener(ChangeSitEnding);
     }
 
 
@@ -136,6 +137,34 @@ public class Player : MonoBehaviour
         animator.SetLayerWeight(2, 0);
         animator.SetLayerWeight(3, 0);
         animator.SetLayerWeight(4, 1);
+    }
+    public void ChangeSitEnding()
+    {
+        this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, -1.5f);
+        MovePosition(-6f);
+        this.transform.localScale = new Vector3(-0.6f, 0.6f, 0.6f);
+        m_FacingRight = false;
+        if (Singleton.runtime.sympathyScore >= 7)
+        {
+            animator.SetLayerWeight(0, 0);
+            animator.SetLayerWeight(1, 0);
+            animator.SetLayerWeight(2, 0);
+            animator.SetLayerWeight(3, 0);
+            animator.SetLayerWeight(4, 0);
+            animator.SetLayerWeight(6, 0);
+            animator.SetLayerWeight(5, 1);
+        }
+        else if (Singleton.runtime.sympathyScore <= 6)
+        {
+            animator.SetLayerWeight(0, 0);
+            animator.SetLayerWeight(1, 0);
+            animator.SetLayerWeight(2, 0);
+            animator.SetLayerWeight(3, 0);
+            animator.SetLayerWeight(4, 0);
+            animator.SetLayerWeight(5, 0);
+            animator.SetLayerWeight(6, 1);
+        }
+        
     }
     public void ChangeState()
     {

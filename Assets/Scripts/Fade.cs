@@ -20,10 +20,33 @@ public class Fade : MonoBehaviour
         Singleton.events.fade_to_work.AddListener(FadeToWork);
         Singleton.events.fade_to_cafetaria.AddListener(FadeToCafetaria);
         Singleton.events.fade_to_office.AddListener(FadeToOffice);
+        Singleton.events.fade_from_menu.AddListener(MenuFade);
     }
     public void OnFadeInComplete()
     {
         Singleton.events.change_day.Invoke();
+    }
+    public void MenuFade()
+    {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutMenu");
+    }
+    public void OnFadeMenuComplete()
+    {
+        animator.SetTrigger("FadeIn");
+        if(Singleton.runtime.day == 1)
+        {
+            SceneManager.LoadScene(1);
+        }
+        else if(Singleton.runtime.day == 2)
+        {
+            SceneManager.LoadScene(5);
+        }
+        else if (Singleton.runtime.day == 3)
+        {
+            SceneManager.LoadScene(8);
+        }
+        Singleton.runtime.UnFreeze();
     }
     public void FadeToScene()
     {
@@ -58,6 +81,7 @@ public class Fade : MonoBehaviour
         }
         animator.SetTrigger("FadeIn");
         Singleton.runtime.UnFreeze();
+        workAction.Invoke();
     }
     public void FadeToWork()
     {
@@ -154,5 +178,23 @@ public class Fade : MonoBehaviour
         Singleton.events.move_position.Invoke(-3.75f);
         Singleton.events.change_sit.Invoke();
         secondSceneAction.Invoke();
+    }
+    public void FadeToEnding()
+    {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutEnding");
+    }
+    public void OnFadeEndingComplete()
+    {
+        animator.SetTrigger("FadeIn");
+        if (Singleton.runtime.sympathyScore >= 7)
+        {
+            SceneManager.LoadScene(11);
+        }
+        else if (Singleton.runtime.sympathyScore <= 6)
+        {
+            SceneManager.LoadScene(12);
+        }
+        Singleton.events.change_sit_ending.Invoke();
     }
 }

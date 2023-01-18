@@ -21,12 +21,13 @@ public class MainMenu : MonoBehaviour
     {
         DisableMenuButtons();
         DataPersistenceManager.DPMinstance.NewGame();
-        Singleton.events.fade_to_scene.Invoke();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Singleton.events.fade_from_menu.Invoke();
     }
     public void ContinueGame()
     {
         DisableMenuButtons();
-        Singleton.events.fade_to_scene.Invoke();
+        Singleton.events.fade_from_menu.Invoke();
     }
     public void QuitGame()
     {

@@ -19,7 +19,6 @@ public class RuntimeManager : MonoBehaviour, IDataPersistence
     private void Start()
     {
         Singleton.events.dialogue_start.AddListener(Freeze);
-        Singleton.events.dialogue_step.AddListener(data => Singleton.manifest.dialoguebuf.Add(data.text));
         Singleton.events.dialogue_end.AddListener(UnFreeze);
         Singleton.events.dialogue_option_select.AddListener(IncrementScore);
         Singleton.events.dialogue_option_select.AddListener(DialogueStorage);
@@ -38,11 +37,6 @@ public class RuntimeManager : MonoBehaviour, IDataPersistence
         data.sympathyScore = this.sympathyScore;
         data.day = this.day;
     }
-    public void WriteManifest() 
-    {
-        // Save data logic. TODO LATER!!!
-    }
-
     public void Freeze()
     {
         m_freezed = true;

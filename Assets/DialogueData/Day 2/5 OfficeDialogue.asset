@@ -20,7 +20,7 @@ MonoBehaviour:
     options:
     - option: '*Memberi semangat Jason*'
       next: {fileID: 11400000, guid: 819fe758adf89804c9d2b5af5c5896d0, type: 2}
-      points: 0
+      points: 1
     - option: '*Katakan kepada Jason untuk menguatkan diri*'
       next: {fileID: 11400000, guid: 32e2f5a630def414dbe00ed8ac85dd3c, type: 2}
       points: 0

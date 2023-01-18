@@ -7,7 +7,6 @@ public class Singleton : MonoBehaviour
 {
     private static Singleton m_instance;
 
-    public static Manifest manifest;
     public static GameEvents events;
     public static RuntimeManager runtime;
     
@@ -20,11 +19,9 @@ public class Singleton : MonoBehaviour
         }
 
         m_instance = this;
-        manifest = new Manifest();
         events = new GameEvents();
         runtime = GetComponent<RuntimeManager>();
 
-        manifest.dialoguebuf = new List<string>();
 
         events.dialogue_start_request = new UnityEvent<DialogueSO>();
         events.dialogue_start = new UnityEvent();
@@ -48,6 +45,8 @@ public class Singleton : MonoBehaviour
         events.change_sit = new UnityEvent();
         events.change_height = new UnityEvent();
         events.change_day = new UnityEvent();
+        events.fade_from_menu = new UnityEvent();
+        events.change_sit_ending = new UnityEvent();
 
         DontDestroyOnLoad(gameObject);
     }
@@ -78,13 +77,6 @@ public struct GameEvents
     public UnityEvent change_sit;
     public UnityEvent change_height;
     public UnityEvent change_day;
-}
-
-
-public struct Manifest 
-{
-    public List<string> dialoguebuf;
-    public int sympathy_level;
-    public int unlocked_chapter;
-    public int chapter;
+    public UnityEvent fade_from_menu;
+    public UnityEvent change_sit_ending;
 }

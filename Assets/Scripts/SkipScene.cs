@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class SkipScene : MonoBehaviour
 {
     private static SkipScene instance;
+    public UnityEvent action;
     private void Awake()
     {
         if (instance != null)
@@ -20,6 +22,6 @@ public class SkipScene : MonoBehaviour
     }
     public void NextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        action.Invoke();
     }
 }

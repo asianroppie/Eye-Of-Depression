@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class DataPersistenceManager : MonoBehaviour
 {
+    [Header("Debugging")]
+    [SerializeField] private bool initializeDataIfNull = false;
+
     [Header("File Storage Config")]
     [SerializeField] private string fileName;
     [SerializeField] private bool useEncryption;
@@ -24,12 +28,26 @@ public class DataPersistenceManager : MonoBehaviour
             DPMinstance = this;
         }
         DontDestroyOnLoad(gameObject);
-    }
-    private void Start()
-    {
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
+    }
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+    }
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+    }
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
+    }
+    public void OnSceneUnloaded(Scene scene)
+    {
+        SaveGame();
     }
     public void NewGame()
     {
@@ -38,10 +56,14 @@ public class DataPersistenceManager : MonoBehaviour
     public void LoadGame()
     {
         this.gameData = dataHandler.Load();
+        if(this.gameData == null && initializeDataIfNull)
+        {
+            NewGame();
+        }
         if(this.gameData == null)
         {
-            Debug.Log("No Data. Data created at default.");
-            NewGame();
+            Debug.Log("No Data. Start a new game first before loading.");
+            return;
         }
         foreach(IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
@@ -50,6 +72,11 @@ public class DataPersistenceManager : MonoBehaviour
     }
     public void SaveGame()
     {
+        if(this.gameData == null)
+        {
+            Debug.Log("No data. Start a new game first before saving.");
+            return;
+        }
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
             dataPersistenceObj.SaveData(ref gameData);
@@ -64,5 +91,9 @@ public class DataPersistenceManager : MonoBehaviour
     {
         IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistence>();
         return new List<IDataPersistence>(dataPersistenceObjects);
+    }
+    public bool HasGameData()
+    {
+        return gameData != null;
     }
 }

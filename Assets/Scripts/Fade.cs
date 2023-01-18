@@ -21,14 +21,6 @@ public class Fade : MonoBehaviour
         Singleton.events.fade_to_cafetaria.AddListener(FadeToCafetaria);
         Singleton.events.fade_to_office.AddListener(FadeToOffice);
     }
-    /*public void Freeze()
-    {
-        Singleton.runtime.Freeze();
-    }
-    public void Unfreeze()
-    {
-        Singleton.runtime.UnFreeze();
-    }*/
     public void OnFadeInComplete()
     {
         Singleton.events.change_day.Invoke();

@@ -55,6 +55,7 @@ public class DataPersistenceManager : MonoBehaviour
         this.gameData = new GameData();
         Singleton.runtime.sympathyScore = this.gameData.sympathyScore;
         Singleton.runtime.day = this.gameData.day;
+        SaveGame();
     }
     public void LoadGame()
     {

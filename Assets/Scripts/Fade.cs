@@ -13,6 +13,7 @@ public class Fade : MonoBehaviour
     public UnityEvent lunchAction;
     public UnityEvent secondSceneAction;
     public UnityEvent officeAction;
+
     void Start()
     {
         Singleton.events.fade_to_scene.AddListener(FadeToScene);
@@ -22,17 +23,23 @@ public class Fade : MonoBehaviour
         Singleton.events.fade_to_office.AddListener(FadeToOffice);
         Singleton.events.fade_to_breakroom.AddListener(FadeToBreakroom);
         Singleton.events.fade_to_breakroom2.AddListener(FadeToBreakroom2);
-        Singleton.events.fade_from_menu.AddListener(MenuFade);
+        Singleton.events.fade_from_menu.AddListener(FadeFromMenu);
+        Singleton.events.fade_from_continue.AddListener(FadeFromContinue);
         Singleton.events.fade_to_menu.AddListener(FadeToMenu);
     }
     public void OnFadeInComplete()
     {
         Singleton.events.change_day.Invoke();
     }
-    public void MenuFade()
+    public void FadeFromMenu()
     {
         Singleton.runtime.Freeze();
         animator.SetTrigger("FadeOutMenu");
+    }
+    public void FadeFromContinue()
+    {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutContinue");
     }
     public void OnFadeMenuComplete()
     {
@@ -49,7 +56,6 @@ public class Fade : MonoBehaviour
         {
             SceneManager.LoadScene(8);
         }
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Singleton.runtime.UnFreeze();
     }
     public void FadeToScene()

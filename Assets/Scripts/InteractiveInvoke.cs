@@ -45,7 +45,6 @@ public class InteractiveInvoke : Interactive
             AudioManager.AMinstance.Play("Door");
             Singleton.events.fade_to_scene.Invoke();
         }
-        Destroy(this.gameObject);
     }
     public void ResponsePop()
     {

@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
     public void ContinueGame()
     {
         DisableMenuButtons();
-        Singleton.events.fade_from_menu.Invoke();
+        Singleton.events.fade_from_continue.Invoke();
     }
     public void QuitGame()
     {

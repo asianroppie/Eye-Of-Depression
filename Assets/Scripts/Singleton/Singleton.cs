@@ -50,6 +50,7 @@ public class Singleton : MonoBehaviour
         events.enable = new UnityEvent();
         events.change_day = new UnityEvent();
         events.fade_from_menu = new UnityEvent();
+        events.fade_from_continue = new UnityEvent();
         events.change_sit_ending = new UnityEvent();
         events.destroy_player = new UnityEvent();
         events.fade_to_menu = new UnityEvent();
@@ -88,6 +89,7 @@ public struct GameEvents
     public UnityEvent enable;
     public UnityEvent change_day;
     public UnityEvent fade_from_menu;
+    public UnityEvent fade_from_continue;
     public UnityEvent change_sit_ending;
     public UnityEvent destroy_player;
     public UnityEvent fade_to_menu;

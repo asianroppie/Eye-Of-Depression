@@ -20,6 +20,8 @@ public class Fade : MonoBehaviour
         Singleton.events.fade_to_work.AddListener(FadeToWork);
         Singleton.events.fade_to_cafetaria.AddListener(FadeToCafetaria);
         Singleton.events.fade_to_office.AddListener(FadeToOffice);
+        Singleton.events.fade_to_breakroom.AddListener(FadeToBreakroom);
+        Singleton.events.fade_to_breakroom2.AddListener(FadeToBreakroom2);
         Singleton.events.fade_from_menu.AddListener(MenuFade);
     }
     public void OnFadeInComplete()
@@ -34,11 +36,11 @@ public class Fade : MonoBehaviour
     public void OnFadeMenuComplete()
     {
         animator.SetTrigger("FadeIn");
-        if(Singleton.runtime.day == 1)
+        if (Singleton.runtime.day == 1)
         {
             SceneManager.LoadScene(1);
         }
-        else if(Singleton.runtime.day == 2)
+        else if (Singleton.runtime.day == 2)
         {
             SceneManager.LoadScene(5);
         }
@@ -46,6 +48,7 @@ public class Fade : MonoBehaviour
         {
             SceneManager.LoadScene(8);
         }
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Singleton.runtime.UnFreeze();
     }
     public void FadeToScene()
@@ -147,6 +150,7 @@ public class Fade : MonoBehaviour
         animator.SetTrigger("FadeIn");
         Singleton.runtime.UnFreeze();
         Singleton.events.move_position.Invoke(5.4f);
+        Singleton.events.flip_player.Invoke();
         lunchAction.Invoke();
     }
     public void FadeToBreakroom()
@@ -196,5 +200,18 @@ public class Fade : MonoBehaviour
             SceneManager.LoadScene(12);
         }
         Singleton.events.change_sit_ending.Invoke();
+    }
+    public void FadeToMenu()
+    {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutToMenu");
+    }
+    public void OnFadeToMenuComplete()
+    {
+        animator.SetTrigger("FadeIn");
+        Singleton.runtime.UnFreeze();
+        workAction.Invoke();
+        Singleton.events.destroy_player.Invoke();
+        SceneManager.LoadScene(0);
     }
 }

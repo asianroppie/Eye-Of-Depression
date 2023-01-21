@@ -39,7 +39,10 @@ public class Player : MonoBehaviour
         Singleton.events.change_state.AddListener(ChangeState);
         Singleton.events.change_sit.AddListener(ChangeSit);
         Singleton.events.change_height.AddListener(ChangeHeight);
+        Singleton.events.disable.AddListener(Disable);
+        Singleton.events.enable.AddListener(Enable);
         Singleton.events.change_sit_ending.AddListener(ChangeSitEnding);
+        Singleton.events.destroy_player.AddListener(Destroy);
     }
 
 
@@ -99,6 +102,8 @@ public class Player : MonoBehaviour
             animator.SetLayerWeight(2, 0);
             animator.SetLayerWeight(3, 0);
             animator.SetLayerWeight(4, 0);
+            animator.SetLayerWeight(5, 0);
+            animator.SetLayerWeight(6, 0);
             animator.SetLayerWeight(1, 1);
         }
         if(Singleton.runtime.gloomie)
@@ -107,6 +112,8 @@ public class Player : MonoBehaviour
             animator.SetLayerWeight(2, 0);
             animator.SetLayerWeight(1, 0);
             animator.SetLayerWeight(4, 0);
+            animator.SetLayerWeight(5, 0);
+            animator.SetLayerWeight(6, 0);
             animator.SetLayerWeight(3, 1);
         }
     }
@@ -118,6 +125,8 @@ public class Player : MonoBehaviour
             animator.SetLayerWeight(2, 0);
             animator.SetLayerWeight(3, 0);
             animator.SetLayerWeight(4, 0);
+            animator.SetLayerWeight(5, 0);
+            animator.SetLayerWeight(6, 0);
             animator.SetLayerWeight(0, 1);
         }
         if (Singleton.runtime.gloomie)
@@ -126,6 +135,8 @@ public class Player : MonoBehaviour
             animator.SetLayerWeight(1, 0);
             animator.SetLayerWeight(3, 0);
             animator.SetLayerWeight(4, 0);
+            animator.SetLayerWeight(5, 0);
+            animator.SetLayerWeight(6, 0);
             animator.SetLayerWeight(2, 1);
         }
     }
@@ -136,7 +147,17 @@ public class Player : MonoBehaviour
         animator.SetLayerWeight(1, 0);
         animator.SetLayerWeight(2, 0);
         animator.SetLayerWeight(3, 0);
+        animator.SetLayerWeight(5, 0);
+        animator.SetLayerWeight(6, 0);
         animator.SetLayerWeight(4, 1);
+    }
+    public void Disable()
+    {
+        gameObject.GetComponent<Renderer>().enabled = false;
+    }
+    public void Enable()
+    {
+        gameObject.GetComponent<Renderer>().enabled = true;
     }
     public void ChangeSitEnding()
     {
@@ -173,6 +194,10 @@ public class Player : MonoBehaviour
     public void ChangeHeight()
     {
         this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, -2.45f);
+    }
+    public void Destroy()
+    {
+        Destroy(this.gameObject);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

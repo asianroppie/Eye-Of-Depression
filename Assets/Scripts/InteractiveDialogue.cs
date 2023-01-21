@@ -59,10 +59,6 @@ public class InteractiveDialogue : Interactive
         }
         Singleton.events.dialogue_end.AddListener(OnDialogueEnd);
     }
-    public void TurnOnSprite()
-    {
-        gameObject.GetComponent<Renderer>().enabled = true;
-    }
     public void Flip()
     {
         Vector3 theScale = transform.localScale;

@@ -20,12 +20,14 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         DisableMenuButtons();
+        //DataPersistenceManager.DPMinstance.DeleteSave();
         DataPersistenceManager.DPMinstance.NewGame();
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Singleton.events.fade_from_menu.Invoke();
     }
     public void ContinueGame()
     {
+        //DataPersistenceManager.DPMinstance.SaveGame();
         DisableMenuButtons();
         Singleton.events.fade_from_menu.Invoke();
     }

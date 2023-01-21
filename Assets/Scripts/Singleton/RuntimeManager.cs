@@ -12,7 +12,7 @@ public class RuntimeManager : MonoBehaviour, IDataPersistence
     public bool gloomie = false;
     public DialogueOption tempOption;
     //public DialogueSO tempSO;
-    public int sympathyScore;
+    public int sympathyScore = 0;
     public int day = 1;
     public string activeScene;
 

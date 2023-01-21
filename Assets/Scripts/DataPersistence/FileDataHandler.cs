@@ -73,6 +73,11 @@ public class FileDataHandler
             Debug.Log("Error when trying to save data to file: " + fullPath + "\n" + e);
         }
     }
+    public void Delete()
+    {
+        string fullPath = Path.Combine(dataDirPath, dataFileName);
+        File.Delete(fullPath);
+    }
     private string EncryptDecrypt(string data)
     {
         string modifiedData = "";

@@ -51,7 +51,10 @@ public class DataPersistenceManager : MonoBehaviour
     }
     public void NewGame()
     {
+        dataHandler.Delete();
         this.gameData = new GameData();
+        Singleton.runtime.sympathyScore = this.gameData.sympathyScore;
+        Singleton.runtime.day = this.gameData.day;
     }
     public void LoadGame()
     {

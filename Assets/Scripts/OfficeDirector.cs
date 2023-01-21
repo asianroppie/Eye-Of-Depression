@@ -10,6 +10,9 @@ public class OfficeDirector : MonoBehaviour
     public UnityEvent firstAction;
     void Start()
     {
+        AudioManager.AMinstance.Stop("Train");
+        AudioManager.AMinstance.Stop("Theme");
+        AudioManager.AMinstance.Play("Office");
         Singleton.events.play_cutscene.AddListener(Play);
         firstAction.Invoke();
     }
@@ -20,30 +23,15 @@ public class OfficeDirector : MonoBehaviour
     }
     public void Day2()
     {
-        //StartCoroutine(StartDay2());
         Singleton.events.move_position.Invoke(-3f);
         Singleton.events.flip_player.Invoke();
         director.Play();
     }
-    /*IEnumerator StartDay2()
-    {
-        yield return new WaitForSeconds(0.3f);
-        Singleton.events.move_position.Invoke(-3f);
-        Singleton.events.flip_player.Invoke();
-        director.Play();
-    }*/
     public void Day3()
     {
-        //StartCoroutine(StartDay3());
         Singleton.events.move_position.Invoke(-8f);
         director.Play();
     }
-    /*IEnumerator StartDay3()
-    {
-        yield return new WaitForSeconds(0.3f);
-        Singleton.events.move_position.Invoke(-8f);
-        director.Play();
-    }*/
     public void Breakroom()
     {
         StartCoroutine(StartBreakroom());
@@ -52,5 +40,32 @@ public class OfficeDirector : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         director.Play();
+    }
+    public void Disable()
+    {
+        Singleton.events.disable.Invoke();
+    }
+    public void Enable()
+    {
+        Singleton.events.enable.Invoke();
+    }
+    public void Move()
+    {
+        Singleton.events.move_position.Invoke(-5f);
+    }
+    public void PlayCafetariaAudio()
+    {
+        AudioManager.AMinstance.Stop("Office");
+        AudioManager.AMinstance.Play("Cafetaria");
+    }
+    public void PlayOfficeAudio()
+    {
+        AudioManager.AMinstance.Stop("Cafetaria");
+        AudioManager.AMinstance.Play("Office");
+    }
+    public void PlayTheme()
+    {
+        AudioManager.AMinstance.Stop("Office");
+        AudioManager.AMinstance.Play("Theme");
     }
 }

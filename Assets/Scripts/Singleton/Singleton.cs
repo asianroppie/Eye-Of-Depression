@@ -42,11 +42,16 @@ public class Singleton : MonoBehaviour
         events.fade_to_work = new UnityEvent();
         events.fade_to_cafetaria = new UnityEvent();
         events.fade_to_office = new UnityEvent();
+        events.fade_to_breakroom = new UnityEvent();
+        events.fade_to_breakroom2 = new UnityEvent();
         events.change_sit = new UnityEvent();
         events.change_height = new UnityEvent();
+        events.disable = new UnityEvent();
+        events.enable = new UnityEvent();
         events.change_day = new UnityEvent();
         events.fade_from_menu = new UnityEvent();
         events.change_sit_ending = new UnityEvent();
+        events.destroy_player = new UnityEvent();
 
         DontDestroyOnLoad(gameObject);
     }
@@ -74,9 +79,14 @@ public struct GameEvents
     public UnityEvent fade_to_work;
     public UnityEvent fade_to_cafetaria;
     public UnityEvent fade_to_office;
+    public UnityEvent fade_to_breakroom;
+    public UnityEvent fade_to_breakroom2;
     public UnityEvent change_sit;
     public UnityEvent change_height;
+    public UnityEvent disable;
+    public UnityEvent enable;
     public UnityEvent change_day;
     public UnityEvent fade_from_menu;
     public UnityEvent change_sit_ending;
+    public UnityEvent destroy_player;
 }

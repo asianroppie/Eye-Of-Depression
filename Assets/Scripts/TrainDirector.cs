@@ -6,6 +6,8 @@ public class TrainDirector : MonoBehaviour
 {
     void Start()
     {
+        AudioManager.AMinstance.Stop("Theme");
+        AudioManager.AMinstance.Play("Train");
         StartCoroutine(Wait());
     }
     IEnumerator Wait()

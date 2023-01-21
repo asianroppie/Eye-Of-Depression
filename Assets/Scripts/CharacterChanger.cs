@@ -29,9 +29,9 @@ public class CharacterChanger : MonoBehaviour
         Singleton.runtime.gloomie = false;
         Singleton.events.change_outfit.Invoke();
     }
-    /*IEnumerator Wait()
+    public void PlayTheme()
     {
-        yield return new WaitForSeconds(0.2f);
-        interactAction.Invoke();
-    }*/
+        AudioManager.AMinstance.Stop("Office");
+        AudioManager.AMinstance.Play("Theme");
+    }
 }

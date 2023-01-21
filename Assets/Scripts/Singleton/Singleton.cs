@@ -52,6 +52,7 @@ public class Singleton : MonoBehaviour
         events.fade_from_menu = new UnityEvent();
         events.change_sit_ending = new UnityEvent();
         events.destroy_player = new UnityEvent();
+        events.fade_to_menu = new UnityEvent();
 
         DontDestroyOnLoad(gameObject);
     }
@@ -89,4 +90,5 @@ public struct GameEvents
     public UnityEvent fade_from_menu;
     public UnityEvent change_sit_ending;
     public UnityEvent destroy_player;
+    public UnityEvent fade_to_menu;
 }

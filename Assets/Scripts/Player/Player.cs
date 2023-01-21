@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (!Singleton.runtime.Freezed)
+        if (!RuntimeManager.pause)
         {
             // All input code shall be on this block....
 

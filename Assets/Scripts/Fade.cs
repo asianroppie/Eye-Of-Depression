@@ -23,6 +23,7 @@ public class Fade : MonoBehaviour
         Singleton.events.fade_to_breakroom.AddListener(FadeToBreakroom);
         Singleton.events.fade_to_breakroom2.AddListener(FadeToBreakroom2);
         Singleton.events.fade_from_menu.AddListener(MenuFade);
+        Singleton.events.fade_to_menu.AddListener(FadeToMenu);
     }
     public void OnFadeInComplete()
     {

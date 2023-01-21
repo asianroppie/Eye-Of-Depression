@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RuntimeManager : MonoBehaviour, IDataPersistence
 {
-    private bool m_freezed = false;
+    public static bool pause = false;
     public bool onMonologue = false;
     public bool showered = false;
     public bool normie = true;
@@ -25,8 +25,6 @@ public class RuntimeManager : MonoBehaviour, IDataPersistence
         Singleton.events.change_day.AddListener(DayChanger);
     }
 
-    public bool Freezed => m_freezed;
-
     public void LoadData(GameData data)
     {
         this.sympathyScore = data.sympathyScore;
@@ -39,14 +37,14 @@ public class RuntimeManager : MonoBehaviour, IDataPersistence
     }
     public void Freeze()
     {
-        m_freezed = true;
+        pause = true;
         Time.timeScale = 0;
         Singleton.events.change_state.Invoke();
     }
 
     public void UnFreeze()
     {
-        m_freezed = false;
+        pause = false;
         Time.timeScale = 1;
     }
     public void IncrementScore(DialogueOption option)

@@ -63,6 +63,10 @@ public class Player : MonoBehaviour
                     m_proximityGO.First().SendMessage("Interact");
                 }
             }
+            /*if (m_proximityGO.First() == null)
+            {
+                m_proximityGO.RemoveAt(0);
+            }*/
         }
     }
 
@@ -81,6 +85,44 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (m_proximityGO.First() == null)
+        {
+            m_proximityGO.RemoveAt(0);
+        }
+        if (m_proximityGO.Count > 0)
+        {
+            m_proximityGO.Sort((GameObject a, GameObject b) => { // Sort by closest
+                a.SendMessage("ActivateIcon", false);
+                b.SendMessage("ActivateIcon", false);
+                var distance_to_a = Mathf.Abs(a.transform.position.x - transform.position.x);
+                var distance_to_b = Mathf.Abs(b.transform.position.x - transform.position.x);
+
+                if (distance_to_a > distance_to_b) return 1;
+                if (distance_to_b > distance_to_a) return -1;
+                return 0; // equal distance
+            });
+
+            m_proximityGO.First().SendMessage("ActivateIcon", true && !Singleton.runtime.onMonologue);
+        }
+        
+    }
+
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Interactable"))
+            m_proximityGO.Remove(collision.gameObject);
+    }
+    public void Flip()
+    {
+        m_FacingRight = !m_FacingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+
     public void MovePosition(float xPosition)
     {
         this.gameObject.transform.position = new Vector2(xPosition, this.gameObject.transform.position.y);
@@ -96,7 +138,7 @@ public class Player : MonoBehaviour
 
     public void ChangeOutfit()
     {
-        if(Singleton.runtime.normie)
+        if (Singleton.runtime.normie)
         {
             animator.SetLayerWeight(0, 0);
             animator.SetLayerWeight(2, 0);
@@ -106,7 +148,7 @@ public class Player : MonoBehaviour
             animator.SetLayerWeight(6, 0);
             animator.SetLayerWeight(1, 1);
         }
-        if(Singleton.runtime.gloomie)
+        if (Singleton.runtime.gloomie)
         {
             animator.SetLayerWeight(0, 0);
             animator.SetLayerWeight(2, 0);
@@ -185,7 +227,7 @@ public class Player : MonoBehaviour
             animator.SetLayerWeight(5, 0);
             animator.SetLayerWeight(6, 1);
         }
-        
+
     }
     public void ChangeState()
     {
@@ -198,37 +240,5 @@ public class Player : MonoBehaviour
     public void Destroy()
     {
         Destroy(this.gameObject);
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (m_proximityGO.Count > 0)
-        {
-            m_proximityGO.Sort((GameObject a, GameObject b) => { // Sort by closest
-                a.SendMessage("ActivateIcon", false);
-                b.SendMessage("ActivateIcon", false);
-                var distance_to_a = Mathf.Abs(a.transform.position.x - transform.position.x);
-                var distance_to_b = Mathf.Abs(b.transform.position.x - transform.position.x);
-
-                if (distance_to_a > distance_to_b) return 1;
-                if (distance_to_b > distance_to_a) return -1;
-                return 0; // equal distance
-            });
-
-            m_proximityGO.First().SendMessage("ActivateIcon", true && !Singleton.runtime.onMonologue);
-        }
-    }
-
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Interactable"))
-            m_proximityGO.Remove(collision.gameObject);
-    }
-    public void Flip()
-    {
-        m_FacingRight = !m_FacingRight;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
     }
 }

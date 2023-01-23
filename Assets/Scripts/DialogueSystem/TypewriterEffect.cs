@@ -22,6 +22,7 @@ public class TypewriterEffect : MonoBehaviour
             charIndex = Mathf.FloorToInt(t);
             charIndex = Mathf.Clamp(charIndex, 0, textToType.Length);
             textLabel.text = textToType.Substring(0, charIndex);
+            //AudioManager.AMinstance.Play("");
             yield return null;
         }
         textLabel.text = textToType;

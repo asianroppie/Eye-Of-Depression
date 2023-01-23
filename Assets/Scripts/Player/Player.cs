@@ -39,12 +39,16 @@ public class Player : MonoBehaviour
         Singleton.events.change_state.AddListener(ChangeState);
         Singleton.events.change_sit.AddListener(ChangeSit);
         Singleton.events.change_height.AddListener(ChangeHeight);
+        Singleton.events.disable.AddListener(Disable);
+        Singleton.events.enable.AddListener(Enable);
+        Singleton.events.change_sit_ending.AddListener(ChangeSitEnding);
+        Singleton.events.destroy_player.AddListener(Destroy);
     }
 
 
     private void Update()
     {
-        if (!Singleton.runtime.Freezed)
+        if (!RuntimeManager.pause)
         {
             // All input code shall be on this block....
 
@@ -59,6 +63,10 @@ public class Player : MonoBehaviour
                     m_proximityGO.First().SendMessage("Interact");
                 }
             }
+            /*if (m_proximityGO.First() == null)
+            {
+                m_proximityGO.RemoveAt(0);
+            }*/
         }
     }
 
@@ -77,76 +85,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void MovePosition(float xPosition)
-    {
-        this.gameObject.transform.position = new Vector2(xPosition, this.gameObject.transform.position.y);
-        this.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
-        m_FacingRight = true;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Interactable"))
-            m_proximityGO.Add(collision.gameObject);
-    }
-
-    public void ChangeOutfit()
-    {
-        if(Singleton.runtime.normie)
-        {
-            animator.SetLayerWeight(0, 0);
-            animator.SetLayerWeight(2, 0);
-            animator.SetLayerWeight(3, 0);
-            animator.SetLayerWeight(4, 0);
-            animator.SetLayerWeight(1, 1);
-        }
-        if(Singleton.runtime.gloomie)
-        {
-            animator.SetLayerWeight(0, 0);
-            animator.SetLayerWeight(2, 0);
-            animator.SetLayerWeight(1, 0);
-            animator.SetLayerWeight(4, 0);
-            animator.SetLayerWeight(3, 1);
-        }
-    }
-    public void ChangeCharacter()
-    {
-        if (Singleton.runtime.normie)
-        {
-            animator.SetLayerWeight(1, 0);
-            animator.SetLayerWeight(2, 0);
-            animator.SetLayerWeight(3, 0);
-            animator.SetLayerWeight(4, 0);
-            animator.SetLayerWeight(0, 1);
-        }
-        if (Singleton.runtime.gloomie)
-        {
-            animator.SetLayerWeight(0, 0);
-            animator.SetLayerWeight(1, 0);
-            animator.SetLayerWeight(3, 0);
-            animator.SetLayerWeight(4, 0);
-            animator.SetLayerWeight(2, 1);
-        }
-    }
-    public void ChangeSit()
-    {
-        this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, -1.5f);
-        animator.SetLayerWeight(0, 0);
-        animator.SetLayerWeight(1, 0);
-        animator.SetLayerWeight(2, 0);
-        animator.SetLayerWeight(3, 0);
-        animator.SetLayerWeight(4, 1);
-    }
-    public void ChangeState()
-    {
-        animator.SetFloat("Speed", 0);
-    }
-    public void ChangeHeight()
-    {
-        this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, -2.45f);
-    }
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (m_proximityGO.First() == null)
+        {
+            m_proximityGO.RemoveAt(0);
+        }
         if (m_proximityGO.Count > 0)
         {
             m_proximityGO.Sort((GameObject a, GameObject b) => { // Sort by closest
@@ -162,6 +106,7 @@ public class Player : MonoBehaviour
 
             m_proximityGO.First().SendMessage("ActivateIcon", true && !Singleton.runtime.onMonologue);
         }
+        
     }
 
 
@@ -176,5 +121,124 @@ public class Player : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    public void MovePosition(float xPosition)
+    {
+        this.gameObject.transform.position = new Vector2(xPosition, this.gameObject.transform.position.y);
+        this.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+        m_FacingRight = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Interactable"))
+            m_proximityGO.Add(collision.gameObject);
+    }
+
+    public void ChangeOutfit()
+    {
+        if (Singleton.runtime.normie)
+        {
+            animator.SetLayerWeight(0, 0);
+            animator.SetLayerWeight(2, 0);
+            animator.SetLayerWeight(3, 0);
+            animator.SetLayerWeight(4, 0);
+            animator.SetLayerWeight(5, 0);
+            animator.SetLayerWeight(6, 0);
+            animator.SetLayerWeight(1, 1);
+        }
+        if (Singleton.runtime.gloomie)
+        {
+            animator.SetLayerWeight(0, 0);
+            animator.SetLayerWeight(2, 0);
+            animator.SetLayerWeight(1, 0);
+            animator.SetLayerWeight(4, 0);
+            animator.SetLayerWeight(5, 0);
+            animator.SetLayerWeight(6, 0);
+            animator.SetLayerWeight(3, 1);
+        }
+    }
+    public void ChangeCharacter()
+    {
+        if (Singleton.runtime.normie)
+        {
+            animator.SetLayerWeight(1, 0);
+            animator.SetLayerWeight(2, 0);
+            animator.SetLayerWeight(3, 0);
+            animator.SetLayerWeight(4, 0);
+            animator.SetLayerWeight(5, 0);
+            animator.SetLayerWeight(6, 0);
+            animator.SetLayerWeight(0, 1);
+        }
+        if (Singleton.runtime.gloomie)
+        {
+            animator.SetLayerWeight(0, 0);
+            animator.SetLayerWeight(1, 0);
+            animator.SetLayerWeight(3, 0);
+            animator.SetLayerWeight(4, 0);
+            animator.SetLayerWeight(5, 0);
+            animator.SetLayerWeight(6, 0);
+            animator.SetLayerWeight(2, 1);
+        }
+    }
+    public void ChangeSit()
+    {
+        this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, -1.5f);
+        animator.SetLayerWeight(0, 0);
+        animator.SetLayerWeight(1, 0);
+        animator.SetLayerWeight(2, 0);
+        animator.SetLayerWeight(3, 0);
+        animator.SetLayerWeight(5, 0);
+        animator.SetLayerWeight(6, 0);
+        animator.SetLayerWeight(4, 1);
+    }
+    public void Disable()
+    {
+        gameObject.GetComponent<Renderer>().enabled = false;
+    }
+    public void Enable()
+    {
+        gameObject.GetComponent<Renderer>().enabled = true;
+    }
+    public void ChangeSitEnding()
+    {
+        this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, -1.5f);
+        MovePosition(-6f);
+        this.transform.localScale = new Vector3(-0.6f, 0.6f, 0.6f);
+        m_FacingRight = false;
+        if (Singleton.runtime.sympathyScore >= 7)
+        {
+            animator.SetLayerWeight(0, 0);
+            animator.SetLayerWeight(1, 0);
+            animator.SetLayerWeight(2, 0);
+            animator.SetLayerWeight(3, 0);
+            animator.SetLayerWeight(4, 0);
+            animator.SetLayerWeight(6, 0);
+            animator.SetLayerWeight(5, 1);
+        }
+        else if (Singleton.runtime.sympathyScore <= 6)
+        {
+            animator.SetLayerWeight(0, 0);
+            animator.SetLayerWeight(1, 0);
+            animator.SetLayerWeight(2, 0);
+            animator.SetLayerWeight(3, 0);
+            animator.SetLayerWeight(4, 0);
+            animator.SetLayerWeight(5, 0);
+            animator.SetLayerWeight(6, 1);
+        }
+
+    }
+    public void ChangeState()
+    {
+        animator.SetFloat("Speed", 0);
+    }
+    public void ChangeHeight()
+    {
+        this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, -2.45f);
+    }
+    public void Destroy()
+    {
+        Destroy(this.gameObject);
     }
 }

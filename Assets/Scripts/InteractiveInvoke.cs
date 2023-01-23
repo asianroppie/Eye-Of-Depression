@@ -42,9 +42,9 @@ public class InteractiveInvoke : Interactive
         }
         if (Singleton.runtime.showered)
         {
+            AudioManager.AMinstance.Play("Door");
             Singleton.events.fade_to_scene.Invoke();
         }
-        Destroy(this.gameObject);
     }
     public void ResponsePop()
     {
@@ -53,12 +53,18 @@ public class InteractiveInvoke : Interactive
     public void ResponseFade()
     {
         Singleton.events.fade_to_level.Invoke();
+        AudioManager.AMinstance.Play("Door");
     }
     public void ResponseShower()
     {
         Singleton.runtime.showered = true;
         Singleton.events.fade_to_level.Invoke();
+        AudioManager.AMinstance.Play("Shower");
         Destroy(this.gameObject);
+    }
+    public void FlipPlayer()
+    {
+        Singleton.events.flip_player.Invoke();
     }
     public void ResponseWorkdesk()
     {
@@ -67,6 +73,17 @@ public class InteractiveInvoke : Interactive
     public void ResponseCafetariaDoor()
     {
         Singleton.events.fade_to_cafetaria.Invoke();
+        AudioManager.AMinstance.Play("Door");
+    }
+    public void ResponseBreakroomDoor()
+    {
+        Singleton.events.fade_to_breakroom.Invoke();
+        AudioManager.AMinstance.Play("Door");
+    }
+    public void ResponseBreakroomDoor2()
+    {
+        Singleton.events.fade_to_breakroom2.Invoke();
+        AudioManager.AMinstance.Play("Door");
     }
     public void ResponseSit()
     {
@@ -114,6 +131,7 @@ public class InteractiveInvoke : Interactive
         yield return new WaitForSeconds(2.0f);
         beforeText.SetActive(false);
         Singleton.runtime.onMonologue = false;
+        AudioManager.AMinstance.Play("Trash");
         Destroy(this.gameObject);
     }
     IEnumerator StartWorkdesk()

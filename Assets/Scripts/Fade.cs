@@ -13,6 +13,7 @@ public class Fade : MonoBehaviour
     public UnityEvent lunchAction;
     public UnityEvent secondSceneAction;
     public UnityEvent officeAction;
+
     void Start()
     {
         Singleton.events.fade_to_scene.AddListener(FadeToScene);
@@ -20,15 +21,43 @@ public class Fade : MonoBehaviour
         Singleton.events.fade_to_work.AddListener(FadeToWork);
         Singleton.events.fade_to_cafetaria.AddListener(FadeToCafetaria);
         Singleton.events.fade_to_office.AddListener(FadeToOffice);
+        Singleton.events.fade_to_breakroom.AddListener(FadeToBreakroom);
+        Singleton.events.fade_to_breakroom2.AddListener(FadeToBreakroom2);
+        Singleton.events.fade_from_menu.AddListener(FadeFromMenu);
+        Singleton.events.fade_from_continue.AddListener(FadeFromContinue);
+        Singleton.events.fade_to_menu.AddListener(FadeToMenu);
     }
-    /*public void Freeze()
+    public void OnFadeInComplete()
+    {
+        Singleton.events.change_day.Invoke();
+    }
+    public void FadeFromMenu()
     {
         Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutMenu");
     }
-    public void Unfreeze()
+    public void FadeFromContinue()
     {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutContinue");
+    }
+    public void OnFadeMenuComplete()
+    {
+        animator.SetTrigger("FadeIn");
+        if (Singleton.runtime.day == 1)
+        {
+            SceneManager.LoadScene(1);
+        }
+        else if (Singleton.runtime.day == 2)
+        {
+            SceneManager.LoadScene(5);
+        }
+        else if (Singleton.runtime.day == 3)
+        {
+            SceneManager.LoadScene(8);
+        }
         Singleton.runtime.UnFreeze();
-    }*/
+    }
     public void FadeToScene()
     {
         Singleton.runtime.Freeze();
@@ -62,6 +91,7 @@ public class Fade : MonoBehaviour
         }
         animator.SetTrigger("FadeIn");
         Singleton.runtime.UnFreeze();
+        workAction.Invoke();
     }
     public void FadeToWork()
     {
@@ -127,6 +157,7 @@ public class Fade : MonoBehaviour
         animator.SetTrigger("FadeIn");
         Singleton.runtime.UnFreeze();
         Singleton.events.move_position.Invoke(5.4f);
+        Singleton.events.flip_player.Invoke();
         lunchAction.Invoke();
     }
     public void FadeToBreakroom()
@@ -158,5 +189,36 @@ public class Fade : MonoBehaviour
         Singleton.events.move_position.Invoke(-3.75f);
         Singleton.events.change_sit.Invoke();
         secondSceneAction.Invoke();
+    }
+    public void FadeToEnding()
+    {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutEnding");
+    }
+    public void OnFadeEndingComplete()
+    {
+        animator.SetTrigger("FadeIn");
+        if (Singleton.runtime.sympathyScore >= 7)
+        {
+            SceneManager.LoadScene(11);
+        }
+        else if (Singleton.runtime.sympathyScore <= 6)
+        {
+            SceneManager.LoadScene(12);
+        }
+        Singleton.events.change_sit_ending.Invoke();
+    }
+    public void FadeToMenu()
+    {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutToMenu");
+    }
+    public void OnFadeToMenuComplete()
+    {
+        animator.SetTrigger("FadeIn");
+        Singleton.runtime.UnFreeze();
+        workAction.Invoke();
+        Singleton.events.destroy_player.Invoke();
+        SceneManager.LoadScene(0);
     }
 }

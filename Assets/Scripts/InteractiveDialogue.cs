@@ -10,18 +10,12 @@ public class InteractiveDialogue : Interactive
     public UnityEvent callback;
     public DialogueSO temp;
     public bool spoken = false;
-    //public GameObject player;
-    protected override void Start()
-    {
-        base.Start();
-        //player = GameObject.FindGameObjectWithTag("Player");
-    }
+
     public override void Interact()
     {
         if(!spoken)
         {
             Singleton.events.dialogue_start_request.Invoke(dialogue);
-            //Flip();
             Singleton.events.dialogue_end.AddListener(OnDialogueEnd);
             this.gameObject.tag = "Untagged";
             foreach (Transform child in transform)
@@ -57,7 +51,6 @@ public class InteractiveDialogue : Interactive
         {
             temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Day 1/6.1.2 Response.asset", typeof(DialogueSO));
             Singleton.events.dialogue_start_request.Invoke(temp);
-            //Singleton.events.fade_to_office.Invoke();
         }
         else if (Singleton.runtime.tempOption.points == 1)
         {
@@ -66,23 +59,6 @@ public class InteractiveDialogue : Interactive
         }
         Singleton.events.dialogue_end.AddListener(OnDialogueEnd);
     }
-    public void TurnOnSprite()
-    {
-        gameObject.GetComponent<Renderer>().enabled = true;
-    }
-    /*public void Flip()
-    {
-        Vector3 theScale = transform.localScale;
-        if(player.transform.position.x > this.gameObject.transform.position.x)
-        {
-            theScale.x = 0.6f;
-        }
-        else if(player.transform.position.x < this.gameObject.transform.position.x)
-        {
-            theScale.x = -0.6f;
-        }
-        transform.localScale = theScale;
-    }*/
     public void Flip()
     {
         Vector3 theScale = transform.localScale;

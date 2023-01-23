@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class TrainDirector : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
+        AudioManager.AMinstance.Stop("Theme");
+        AudioManager.AMinstance.Play("Train");
         StartCoroutine(Wait());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     IEnumerator Wait()
     {

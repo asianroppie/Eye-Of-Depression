@@ -17,6 +17,12 @@ MonoBehaviour:
     options: []
   - text: Second line
     options:
-    - option: 
-      next: {fileID: 11400000, guid: 9fcba09ff97107a4087b4953f7ea9daa, type: 2}
+    - option: ayy
+      next: {fileID: 0}
+      points: 0
+    - option: yoo
+      next: {fileID: 0}
+      points: 0
+    - option: ettt
+      next: {fileID: 0}
       points: 0

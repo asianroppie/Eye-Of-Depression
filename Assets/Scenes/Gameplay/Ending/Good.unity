@@ -1409,6 +1409,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 188074164923939894, guid: 86c2fea487c17c941bb442dda4644c1a, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2216035172838557092, guid: 86c2fea487c17c941bb442dda4644c1a, type: 3}
       propertyPath: m_text
       value: 'New Text

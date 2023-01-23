@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: 2.2 Response
   m_EditorClassIdentifier: 
   data:
-  - text: "Alex:\nSudah lah jangan terlalu kasar, dia sudah sering bekerja lembur
-      belakangan ini, \t"
+  - text: 'Alex:
+
+      Sudah lah jangan terlalu kasar, dia sudah sering bekerja
+      lembur belakangan ini.'
     options: []
   - text: 'Jason:
 

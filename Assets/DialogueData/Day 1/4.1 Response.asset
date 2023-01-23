@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 4.1 Response
   m_EditorClassIdentifier: 
   data:
-  - text: "Alex:\nHei, kamu butuh bantuan? aku sekarang lagi tidak banyak kerjaan.\r"
+  - text: "Alex:\nHei, kamu butuh bantuan? Aku sekarang lagi tidak banyak kerjaan.\r"
     options: []
   - text: 'Jason:
 

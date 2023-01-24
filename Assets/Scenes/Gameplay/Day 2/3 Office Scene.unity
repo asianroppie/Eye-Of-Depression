@@ -988,18 +988,6 @@ MonoBehaviour:
   callback:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TestScore, Assembly-CSharp
-        m_MethodName: PrintScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 299916601}
         m_TargetAssemblyTypeName: Fade, Assembly-CSharp
         m_MethodName: FadeToScene
@@ -2253,7 +2241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1152732262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2628,6 +2616,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ed82bc8eeb91e43853ee228fc5f957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1666555019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3388956991098809239, guid: 5c4ae89d8b842a94f8651cf44850f007, type: 3}
+  m_PrefabInstance: {fileID: 1723158302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1666555020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3388956991098809233, guid: 5c4ae89d8b842a94f8651cf44850f007, type: 3}
+  m_PrefabInstance: {fileID: 1723158302}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666555019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf9baeae9db31a4fa30dcaa1c52ca4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1666555022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666555019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 3593cb5d58a27de408ec7417f230f293, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1666555020}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Door
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1685827480
 PrefabInstance:
   m_ObjectHideFlags: 0

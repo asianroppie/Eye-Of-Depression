@@ -34,12 +34,12 @@ public class InteractiveDialogue : Interactive
     {
         if(Singleton.runtime.tempOption.points == 0)
         {   
-            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Day 1/2.1.1 Response.asset", typeof(DialogueSO));
+            temp = Resources.Load("DialogueData/Day 1/2.1.1 Response") as DialogueSO;
             Singleton.events.dialogue_start_request.Invoke(temp);
         }
         else if(Singleton.runtime.tempOption.points == 1)
         {
-            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Day 1/2.2.1 Response.asset", typeof(DialogueSO));
+            temp = Resources.Load("DialogueData/Day 1/2.2.1 Response") as DialogueSO;
             Singleton.events.dialogue_start_request.Invoke(temp);
         }
         Singleton.events.dialogue_end.AddListener(OnDialogueEnd);
@@ -49,12 +49,12 @@ public class InteractiveDialogue : Interactive
     {
         if (Singleton.runtime.tempOption.points == 0)
         {
-            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Day 1/6.1.2 Response.asset", typeof(DialogueSO));
+            temp = Resources.Load("DialogueData/Day 1/6.1.2 Response") as DialogueSO;
             Singleton.events.dialogue_start_request.Invoke(temp);
         }
         else if (Singleton.runtime.tempOption.points == 1)
         {
-            temp = (DialogueSO)AssetDatabase.LoadAssetAtPath("Assets/DialogueData/Day 1/6.1.1 Response.asset", typeof(DialogueSO));
+            temp = Resources.Load("DialogueData/Day 1/6.1.1 Response") as DialogueSO;
             Singleton.events.dialogue_start_request.Invoke(temp);
         }
         Singleton.events.dialogue_end.AddListener(OnDialogueEnd);

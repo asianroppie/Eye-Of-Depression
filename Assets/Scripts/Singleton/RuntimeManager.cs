@@ -11,7 +11,6 @@ public class RuntimeManager : MonoBehaviour, IDataPersistence
     public bool normie = true;
     public bool gloomie = false;
     public DialogueOption tempOption;
-    //public DialogueSO tempSO;
     public int sympathyScore = 0;
     public int day = 1;
     public string activeScene;
@@ -54,7 +53,6 @@ public class RuntimeManager : MonoBehaviour, IDataPersistence
     public void DialogueStorage(DialogueOption option)
     {
         tempOption = option;
-        //tempSO = tempOption.next;
     }
     public void DayChanger()
     {

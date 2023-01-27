@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public static Player instance;
 
     public KeyCode interactKey;
-    public float runSpeed = 10.0f;
+    public float runSpeed = 5f;
     private bool m_FacingRight = true;
 
     private void Awake()

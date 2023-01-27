@@ -36,6 +36,6 @@ public class PauseMenu : MonoBehaviour
     }
     public void BackToMenu()
     {
-        Singleton.events.fade_to_menu.Invoke();
+        Singleton.events.fade_from_pause.Invoke();
     }
 }

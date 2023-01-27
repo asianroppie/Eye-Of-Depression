@@ -25,6 +25,7 @@ public class Fade : MonoBehaviour
         Singleton.events.fade_to_breakroom2.AddListener(FadeToBreakroom2);
         Singleton.events.fade_from_menu.AddListener(FadeFromMenu);
         Singleton.events.fade_from_continue.AddListener(FadeFromContinue);
+        Singleton.events.fade_from_pause.AddListener(FadeFromPause);
         Singleton.events.fade_to_menu.AddListener(FadeToMenu);
     }
     public void OnFadeInComplete()
@@ -207,6 +208,18 @@ public class Fade : MonoBehaviour
             SceneManager.LoadScene(12);
         }
         Singleton.events.change_sit_ending.Invoke();
+    }
+    public void FadeFromPause()
+    {
+        Singleton.runtime.Freeze();
+        animator.SetTrigger("FadeOutFromPause");
+    }
+    public void OnFadePauseComplete()
+    {
+        animator.SetTrigger("FadeIn");
+        Singleton.runtime.UnFreeze();
+        Singleton.events.destroy_player.Invoke();
+        SceneManager.LoadScene(0);
     }
     public void FadeToMenu()
     {

@@ -20,11 +20,6 @@ MonoBehaviour:
 
       Tidak ada yang benar-benar berubah dan aku belum membuat
       kemajuan apa pun.'
-    options: []
-  - text: 'Jason:
-
-      Tidak ada yang benar-benar berubah dan aku belum membuat
-      kemajuan apa pun.'
     options:
     - option: '*Meyakinkan Jason*'
       next: {fileID: 11400000, guid: 02c5f7d6e7941f743b8f29f31daf64a0, type: 2}

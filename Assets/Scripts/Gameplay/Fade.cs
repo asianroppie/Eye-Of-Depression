@@ -225,6 +225,10 @@ public class Fade : MonoBehaviour
         Singleton.runtime.UnFreeze();
         workAction.Invoke();
         Singleton.events.destroy_player.Invoke();
+        AudioManager.AMinstance.Stop("Train");
+        AudioManager.AMinstance.Stop("Office");
+        AudioManager.AMinstance.Stop("Cafetaria");
+        AudioManager.AMinstance.Play("Theme");
         SceneManager.LoadScene(0);
     }
 }

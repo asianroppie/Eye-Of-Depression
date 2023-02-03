@@ -214,13 +214,6 @@ public class Fade : MonoBehaviour
         Singleton.runtime.Freeze();
         animator.SetTrigger("FadeOutFromPause");
     }
-    public void OnFadePauseComplete()
-    {
-        animator.SetTrigger("FadeIn");
-        Singleton.runtime.UnFreeze();
-        Singleton.events.destroy_player.Invoke();
-        SceneManager.LoadScene(0);
-    }
     public void FadeToMenu()
     {
         Singleton.runtime.Freeze();

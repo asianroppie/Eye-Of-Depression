@@ -2056,6 +2056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8461037498592109353, guid: 8b7ab50ea8c766246b633c745daae5ad, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b7ab50ea8c766246b633c745daae5ad, type: 3}
 --- !u!1 &883187612
@@ -2630,7 +2634,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1504099908
 GameObject:
@@ -2759,7 +2763,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3515062760178367345, guid: 778bd793ea985da499ee559b5de8b9b7, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3515062760178367345, guid: 778bd793ea985da499ee559b5de8b9b7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3783,7 +3787,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3388956991098809238, guid: 5c4ae89d8b842a94f8651cf44850f007, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3388956991098809238, guid: 5c4ae89d8b842a94f8651cf44850f007, type: 3}
       propertyPath: m_LocalPosition.x

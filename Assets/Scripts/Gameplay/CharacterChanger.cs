@@ -8,7 +8,6 @@ public class CharacterChanger : MonoBehaviour
     public UnityEvent interactAction;
     private void OnEnable()
     {
-        //StartCoroutine(Wait());
         interactAction.Invoke();
     }
     public void ChangeToNormie()

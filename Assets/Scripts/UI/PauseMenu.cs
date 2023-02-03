@@ -8,11 +8,22 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject pauseButton;
+    private bool iconOn = true;
 
     void Start()
     {
         Singleton.events.dialogue_start.AddListener(HideButton);
         Singleton.events.dialogue_end.AddListener(ShowButton);
+    }
+    private void Update()
+    {
+        if( Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(iconOn == true)
+            {
+                PauseGame();
+            }
+        }
     }
     public void PauseGame()
     {
@@ -29,10 +40,12 @@ public class PauseMenu : MonoBehaviour
     public void HideButton()
     {
         pauseButton.SetActive(false);
+        iconOn = false;
     }
     public void ShowButton()
     {
         pauseButton.SetActive(true);
+        iconOn = true;
     }
     public void BackToMenu()
     {

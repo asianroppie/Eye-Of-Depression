@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 113
+  controlID: 96
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 101
+  controlID: 105
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 102
+  controlID: 106
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 313
     height: 601
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -252,7 +252,7 @@ MonoBehaviour:
   - {fileID: 18}
   - {fileID: 19}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -272,8 +272,8 @@ MonoBehaviour:
     y: 0
     width: 375
     height: 947
-  m_MinSize: {x: 276, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -402,23 +402,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ca230000
+      m_SelectedIDs: b4750000
       m_LastClickedID: 0
-      m_ExpandedIDs: a6e9ffffe0edffff2aeeffffd2efffff2af0ffffe4f0ffff82f1ffff1ef2ffffd4f2ffff6cf3ffff08f4ffffc8f4ffff58f5fffff0f5ffff96f6ffffb4f6ffff2afbffff
+      m_ExpandedIDs: 8a8bffff9a8cffffe08cffff888effffe08effffc48fffff8c90ffff5291ffff3292fffff492ffffba93ffffa094ffff5a95ffff1a96ffffe296ffff0097ffffb09affff709effff169fffff2aa0ffff70a0ffff1ea2ffff7aa2ffff62a3ffff2ea4fffff8a4ffffdca5ffffa2a6ffff6ca7ffff56a8ffff14a9ffffd8a9ffffa4aaffffc6aaffff64adffff58affffff2afffff86b0ffffeeb1ffff48b3ffffdcb4ffff28b6ffff6eb7ffffc8b8ffffdab9ffffeebaffff22bcffff26bdffff32beffff30bfffff6ac0ffff7ac0ffff84c0ffff8ac0ffff0ac4ffff14c4ffff4cc4ffff6cc6ffff78c6ffff38e0ffffe2e2fffff2e2fffffce2ffff1ae3ffff20e3ffff34e3ffff9ee4ffff0ef2ffff1ef2ffff28f2ffff60f2ffff2afbfffff4fffffff28f000094900000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Text (TMP)
+        m_OriginalName: Text (TMP)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -7694
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -675,9 +675,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.55287874, y: -1.2988626, z: 0.010664839}
+    m_Target: {x: 907.2271, y: 563.631, z: -6.5147257}
     speed: 2
-    m_Value: {x: 0.55287874, y: -1.2988626, z: 0.010664839}
+    m_Value: {x: 907.2271, y: 563.631, z: -6.5147257}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -728,9 +728,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.8907466
+    m_Target: 563.4704
     speed: 2
-    m_Value: 6.8907466
+    m_Value: 563.4704
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -962,22 +962,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Audio
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Audio
+  - Assets/Scenes
   m_LastFoldersGridSize: 64
   m_LastProjectPath: D:\Edric\EyeOfDepression\Eye-Of-Depression
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 99}
-    m_SelectedIDs: 86630000
-    m_LastClickedID: 25478
-    m_ExpandedIDs: 000000006463000066630000686300006a6300006c6300006e6300007063000072630000746300007c6300008463000000ca9a3b
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: 00630000
+    m_LastClickedID: 25344
+    m_ExpandedIDs: 000000006c6200006e62000070620000726200007462000076620000786200007a620000006300000263000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1005,7 +1005,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006463000066630000686300006a6300006c6300006e630000706300007263000074630000
+    m_ExpandedIDs: 000000006c6200006e62000070620000726200007462000076620000786200007a620000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

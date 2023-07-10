@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
+  m_Name: 6.2 Response
+  m_EditorClassIdentifier: 
+  data:
+  - text: 'Alex:
+
+      Itu bagus Jason!'
+    options: []
+  - text: 'Jason:
+
+      Benarkah?'
+    options: []
+  - text: 'Alex:
+
+      Iya, saudaraku sekarang sedang berjuang melawan penyakit
+      mental Depresi. Tetapi setelah ia konsultasi dengan psikolog dan menjalankan
+      terapi, dia menjadi lebih baik dari sebelumnya.'
+    options: []
+  - text: 'Alex:
+
+      Aku bisa berikan kamu nomor telepon psikolog saudaraku jika
+      kamu mau, aku percaya ini akan membantu kamu dan kesehatan mental kamu.'
+    options: []
+  - text: 'Jason:
+
+      Aku mau nomor kontak psikolog tersebut, terima kasih Alex.'
+    options: []
+  - text: 'Alex:
+
+      Tidak masalah Jason. Hei, aku harap dengan kamu melakukan
+      konsultasi kamu dapat menjadi lebih baik untuk kedepannya.'
+    options: []
+  - text: 'Jason:
+
+      Terima kasih Alex.'
+    options:
+    - option: '*Lanjut*'
+      next: {fileID: 11400000, guid: ed89f3ed7fb16c64ea509ca5903cb902, type: 2}
+      points: 0

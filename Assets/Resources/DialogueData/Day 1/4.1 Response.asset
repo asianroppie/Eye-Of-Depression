@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
+  m_Name: 4.1 Response
+  m_EditorClassIdentifier: 
+  data:
+  - text: "Alex:\nHei, kamu butuh bantuan? Aku sekarang lagi tidak banyak kerjaan.\r"
+    options: []
+  - text: 'Jason:
+
+      Tidak apa-apa kok Alex, terima kasih.'
+    options: []
+  - text: 'Alex:
+
+      Baiklah, tetapi jika kamu butuh bantuan jangan segan-segan
+      kasih tau aku ya.'
+    options: []
+  - text: 'Jason:
+
+      Terima kasih, Alex.'
+    options: []

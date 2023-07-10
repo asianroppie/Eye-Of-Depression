@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
+  m_Name: 5 Office Dialogue
+  m_EditorClassIdentifier: 
+  data:
+  - text: 'Jason:
+
+      Aku sebenarnya mencoba yang terbaik Alex, tetapi aku juga
+      kehilangan motivasi untuk terus berjalan.'
+    options: []
+  - text: "Jason:\nAku hanya ingin berbaring di tempat tidur dan tidak melakukan
+      apa-apa sepanjang hari\u2026\r"
+    options:
+    - option: '*Memotivasi Jason*'
+      next: {fileID: 11400000, guid: 29030dfaa67162242a598ee1432d24d9, type: 2}
+      points: 1
+    - option: '*Itu artinya Jason malas*'
+      next: {fileID: 11400000, guid: 9f8e26e38e8ed764c8cc744c17e9187c, type: 2}
+      points: 0

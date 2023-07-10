@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8ee22ad26e3fa42831ea9a864a5b90, type: 3}
+  m_Name: 6.1.1 Response
+  m_EditorClassIdentifier: 
+  data:
+  - text: "Alex:\nHei Jason, kami tau kamu tidak ada waktu untuk beli makanan nanti,
+      jadi aku dan Lucy membelikan kamu cemilan dan minuman.\r"
+    options: []
+  - text: 'Jason:
+
+      Kalian sangat perhatian sekali, Terima kasih!'
+    options: []
+  - text: 'Lucy:
+
+      Sama-sama Jason, semangat dengan pekerjaanmu ya!'
+    options: []
+  - text: 'Jason:
+
+      Terima kasih, Lucy. Selamat makan!'
+    options: []
+  - text: "Alex & Lucy:\nTerima Kasih!\r"
+    options: []
+  - text: 'Jason:
+
+      *Aku sangat menghargai mereka yang memperhatikan aku*'
+    options: []
